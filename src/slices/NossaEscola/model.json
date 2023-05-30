@@ -1,0 +1,60 @@
+{
+  "id": "nossa_escola",
+  "type": "SharedSlice",
+  "name": "NossaEscola",
+  "description": "NossaEscola",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "" }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": { "label": "Subtítulo", "placeholder": "" }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": { "label": "Texto do botão", "placeholder": "" }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do botão",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "thumb": {
+          "type": "Image",
+          "config": {
+            "label": "Thumb do vídeo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": { "label": "Link do vídeo (Youtube)", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

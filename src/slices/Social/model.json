@@ -1,0 +1,40 @@
+{
+  "id": "social",
+  "type": "SharedSlice",
+  "name": "Social",
+  "description": "Social",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Nome da Rede", "placeholder": "ex: Instagram" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link da Rede",
+            "placeholder": "ex: http://Instagram.com",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icone da Rede",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

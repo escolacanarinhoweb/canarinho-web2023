@@ -1,0 +1,41 @@
+{
+  "id": "galeria_fotos",
+  "type": "SharedSlice",
+  "name": "GaleriaFotos",
+  "description": "GaleriaFotos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "" }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": { "label": "Texto do botão", "placeholder": "" }
+        }
+      },
+      "items": {
+        "photo": {
+          "type": "Image",
+          "config": { "label": "Foto", "constraint": {}, "thumbnails": [] }
+        }
+      }
+    }
+  ]
+}

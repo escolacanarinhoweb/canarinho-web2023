@@ -1,0 +1,38 @@
+{
+  "id": "menu_submenu",
+  "type": "SharedSlice",
+  "name": "MenuSubmenu",
+  "description": "MenuSubmenu",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Nome do item", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do item",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "pai_do_item": {
+          "type": "Text",
+          "config": {
+            "label": "Pai do item",
+            "placeholder": "Preencher somente se esse item for um submenu"
+          }
+        }
+      }
+    }
+  ]
+}

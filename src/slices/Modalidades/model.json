@@ -1,0 +1,58 @@
+{
+  "id": "modalidades",
+  "type": "SharedSlice",
+  "name": "Modalidades",
+  "description": "Modalidades",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "color": {
+          "type": "Select",
+          "config": {
+            "label": "Cor",
+            "placeholder": "Escolha uma cor",
+            "options": ["Amarelo", "Azul", "Laranja"],
+            "default_value": "Amarelo"
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": { "label": "Icone", "constraint": {}, "thumbnails": [] }
+        },
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "ex: Berçario" }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": { "label": "Subtítulo", "placeholder": "ex: de 0 a 3 anos" }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Texto",
+            "placeholder": "ex: Um ambiente com muito...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,o-list-item,list-item,hyperlink"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "ex: /bercario",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

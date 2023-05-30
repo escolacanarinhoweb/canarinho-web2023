@@ -1,0 +1,48 @@
+{
+  "id": "nav_top",
+  "label": "Menu Superior",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "button_language": {
+        "type": "Boolean",
+        "config": {
+          "label": "Mostrar botão de idioma?",
+          "placeholder_false": "Esconder",
+          "placeholder_true": "Mostrar",
+          "default_value": true
+        }
+      },
+      "link_pre_registration": {
+        "type": "Link",
+        "config": {
+          "label": "Link Pré-Matricula",
+          "placeholder": "ex: /pre-registro",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "link_responsible_space": {
+        "type": "Link",
+        "config": {
+          "label": "Link Espaço do Responsável",
+          "placeholder": "ex: https://portal.sophia.com.br/SophiA_65/Acesso.aspx?escola=6296",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "menu_submenu": { "type": "SharedSlice" },
+            "social": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}

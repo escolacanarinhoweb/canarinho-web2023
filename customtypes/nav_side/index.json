@@ -1,0 +1,20 @@
+{
+  "id": "nav_side",
+  "label": "Menu lateral",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": { "label": "Título do menu", "placeholder": "ex: Dia a dia" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "menu": { "type": "SharedSlice" } } }
+      }
+    }
+  }
+}

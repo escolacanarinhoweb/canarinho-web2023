@@ -1,0 +1,31 @@
+{
+  "id": "documentos",
+  "type": "SharedSlice",
+  "name": "Documentos",
+  "description": "Documentos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Nome do documento", "placeholder": "" }
+        },
+        "document": {
+          "type": "Link",
+          "config": {
+            "label": "Documento",
+            "placeholder": "",
+            "select": "media"
+          }
+        }
+      }
+    }
+  ]
+}

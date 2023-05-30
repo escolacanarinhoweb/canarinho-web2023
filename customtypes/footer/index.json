@@ -1,0 +1,84 @@
+{
+  "id": "footer",
+  "label": "Rodapé",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title_map": {
+        "type": "Text",
+        "config": {
+          "label": "Título do Mapa",
+          "placeholder": "ex: Como chegar"
+        }
+      },
+      "subtitle_map": {
+        "type": "Text",
+        "config": {
+          "label": "Subtítulo do Mapa",
+          "placeholder": "ex: Nas nossas unidades Asa Sul e Asa Norte"
+        }
+      },
+      "title_form": {
+        "type": "Text",
+        "config": {
+          "label": "Título do Formulário",
+          "placeholder": "ex: diga olá"
+        }
+      },
+      "subtitle_form": {
+        "type": "Text",
+        "config": {
+          "label": "Subtítulo do formulário",
+          "placeholder": "ex: Nos deixe saber em que podemos ajudar."
+        }
+      },
+      "title_unity1": {
+        "type": "Text",
+        "config": {
+          "label": "Título unidade 1",
+          "placeholder": "ex: Unidade Asa Sul"
+        }
+      },
+      "info_unity1": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Informações unicade 1",
+          "placeholder": "ex: EQS 212/412...",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink,o-list-item,list-item"
+        }
+      },
+      "localization_unity1": {
+        "type": "GeoPoint",
+        "config": { "label": "Localização unidade 1" }
+      },
+      "title_unity2": {
+        "type": "Text",
+        "config": {
+          "label": "Título unidade 2",
+          "placeholder": "ex: Unidade Asa Norte"
+        }
+      },
+      "info_unity2": {
+        "type": "Text",
+        "config": {
+          "label": "Informações unicade 2",
+          "placeholder": "ex: EQN 208/408..."
+        }
+      },
+      "localization_unity2": {
+        "type": "GeoPoint",
+        "config": { "label": "Localização unidade 2" }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright",
+          "placeholder": "ex: ©Copyright: Todos dos direitos reservados a Escola Canarinho"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "fotos_instagram",
+  "type": "SharedSlice",
+  "name": "FotosInstagram",
+  "description": "FotosInstagram",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "ex: Fotos" }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtítulo",
+            "placeholder": "ex: Acompanhe a gente pelo instagram"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Texto do botão",
+            "placeholder": "ex: Instagram"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do botão",
+            "placeholder": "ex: http://...",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "photo": {
+          "type": "Image",
+          "config": { "label": "Fotos", "constraint": {}, "thumbnails": [] }
+        }
+      }
+    }
+  ]
+}

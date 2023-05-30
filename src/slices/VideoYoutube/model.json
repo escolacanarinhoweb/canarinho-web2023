@@ -1,0 +1,23 @@
+{
+  "id": "video_youtube",
+  "type": "SharedSlice",
+  "name": "VideoYoutube",
+  "description": "VideoYoutube",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "video": {
+          "type": "Embed",
+          "config": { "label": "Link vídeo do youtube", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

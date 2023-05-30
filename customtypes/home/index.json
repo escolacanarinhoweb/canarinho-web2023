@@ -1,0 +1,58 @@
+{
+  "id": "home",
+  "label": "Home",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": { "label": "Título", "placeholder": "ex: Escola Canarinho" }
+      },
+      "uid": {
+        "type": "UID",
+        "config": { "label": "uid", "placeholder": "Preenchimento automatico" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "banner_home": { "type": "SharedSlice" },
+            "modalidades": { "type": "SharedSlice" },
+            "nossa_escola": { "type": "SharedSlice" },
+            "tour_virtual": { "type": "SharedSlice" },
+            "video_youtube": { "type": "SharedSlice" },
+            "depoimentos": { "type": "SharedSlice" },
+            "fotos_instagram": { "type": "SharedSlice" }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        }
+      },
+      "meta_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": { "width": 2400, "height": 1260 },
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

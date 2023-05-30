@@ -1,0 +1,62 @@
+{
+  "id": "tour_virtual",
+  "type": "SharedSlice",
+  "name": "TourVirtual",
+  "description": "TourVirtual",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "ex: Tour Virtual" }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtítulo",
+            "placeholder": "ex: Conheça as unidades"
+          }
+        },
+        "button1_text": {
+          "type": "Text",
+          "config": {
+            "label": "Texto do botão 1",
+            "placeholder": "ex: Asa sul"
+          }
+        },
+        "button1_link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do botão 1",
+            "placeholder": "ex: http://...",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "button2_text": {
+          "type": "Text",
+          "config": {
+            "label": "Texto do botão 2",
+            "placeholder": "ex: Asa norte"
+          }
+        },
+        "button2_link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do botão 2",
+            "placeholder": "ex: http://...",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

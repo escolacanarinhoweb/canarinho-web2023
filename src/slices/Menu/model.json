@@ -1,0 +1,35 @@
+{
+  "id": "menu",
+  "type": "SharedSlice",
+  "name": "Menu",
+  "description": "Menu",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Nome do Item",
+            "placeholder": "ex: Nossa Escola"
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link do item",
+            "placeholder": "ex: /nossa-escola",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

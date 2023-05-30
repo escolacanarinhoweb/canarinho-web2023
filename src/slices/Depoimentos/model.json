@@ -1,0 +1,47 @@
+{
+  "id": "depoimentos",
+  "type": "SharedSlice",
+  "name": "Depoimentos",
+  "description": "Depoimentos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Título",
+            "placeholder": "ex: Por que Canarinho?"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtítulo",
+            "placeholder": "ex: Depoimentos de quem passou por aqui"
+          }
+        }
+      },
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Nome", "placeholder": "ex: Lucas" }
+        },
+        "testimony": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Depoimento",
+            "placeholder": "ex: Melhor escola do mundo...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+          }
+        }
+      }
+    }
+  ]
+}

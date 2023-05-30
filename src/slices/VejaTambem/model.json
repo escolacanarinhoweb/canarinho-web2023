@@ -1,0 +1,36 @@
+{
+  "id": "veja_tambem",
+  "type": "SharedSlice",
+  "name": "VejaTambem",
+  "description": "VejaTambem",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Título", "placeholder": "ex: Veja também" }
+        }
+      },
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Nome do link", "placeholder": "" }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "select": "document",
+            "customtypes": ["page"]
+          }
+        }
+      }
+    }
+  ]
+}
