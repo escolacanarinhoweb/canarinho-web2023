@@ -37,6 +37,11 @@ const routes: prismic.ClientConfig['routes'] = [
  */
 export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
   const client = prismic.createClient(repositoryName, {
+    fetchOptions: {
+      next: {
+        revalidate: 10
+      }
+    },
     routes,
     ...config
   })

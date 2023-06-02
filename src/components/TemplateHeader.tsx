@@ -1,6 +1,7 @@
 'use client'
 
 import { RiveLogo } from './RiveLogo'
+import Link from 'next-intl/link'
 import { ButtonText } from './ButtonText'
 import { MenuList, MenuListProps } from './MenuList'
 import { PrismicLink } from '@prismicio/react'
@@ -9,11 +10,11 @@ import { KeyTextField, LinkField, SliceZone } from '@prismicio/client'
 import { SocialSlice } from '../../prismicio-types'
 import { Container } from './Container'
 import { ButtonLanguage } from './ButtonLanguage'
-import Link from 'next/link'
 import IconOpenMenu from '@/svgs/IconOpenMenu'
 import { use, useEffect, useState } from 'react'
 import { ButtonTheme } from './ButtonTheme'
 import { Logo } from './Logo'
+import { useLocale } from 'next-intl'
 
 export interface TemplateHeaderProps extends MenuListProps {
   social: SliceZone<SocialSlice>
@@ -27,6 +28,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const locale = useLocale()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +62,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
             isScrolling ? '-translate-y-12' : 'translate-y-0'
           }`}
         >
-          <Link href="/" className={LogoContentBox}>
+          <Link href="/" locale={locale} className={LogoContentBox}>
             <Logo />
           </Link>
         </div>

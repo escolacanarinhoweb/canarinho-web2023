@@ -1,18 +1,21 @@
 import { SliceZone } from '@prismicio/client'
 import { MenuSubmenuSlice } from '../../prismicio-types'
 import { PrismicNextLink } from '@prismicio/next'
+import { useLocale } from 'next-intl'
 
 export interface MenuListProps {
   slices: SliceZone<MenuSubmenuSlice>
 }
 
 export const MenuList = ({ slices }: MenuListProps) => {
+  const locale = useLocale()
+
   return (
     <div className={Wrapper}>
       {slices.map((slice, index) => {
         return (
           <div className={Item} key={index}>
-            <PrismicNextLink field={slice.primary.link}>
+            <PrismicNextLink field={slice.primary.link} locale={locale}>
               {slice.primary.name}
             </PrismicNextLink>
             {slice.items.length > 0 && (
@@ -34,7 +37,7 @@ export const MenuList = ({ slices }: MenuListProps) => {
                   {slice.items.map((item, index) => {
                     return (
                       <li className={SubItem} key={index}>
-                        <PrismicNextLink field={item.link}>
+                        <PrismicNextLink field={item.link} locale={locale}>
                           {item.name}
                         </PrismicNextLink>
                       </li>
