@@ -1,8 +1,10 @@
 import { useLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { Sofia, Comic_Neue, Mulish } from 'next/font/google'
+import { createTranslator, NextIntlClientProvider } from 'next-intl'
 
 import './globals.css'
+import { Providers } from './providers'
 
 // const inter = Inter({ subsets: ['latin'] })
 const sofia = Sofia({
@@ -38,12 +40,24 @@ export default function RootLayout({ children, params }: LayoutProps) {
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${sofia.variable} ${comic_neue.variable} ${mulish.variable}`}
+        className={`${sofia.variable} ${comic_neue.variable} ${mulish.variable} ${Body}`}
       >
-        {children}
+        <NextIntlClientProvider locale={locale}>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
 }
+
+const Body = `
+  font-sans
+  bg-yellow-400
+  dark:bg-yellow-900
+  bg-[url('/images/textureYellow.png')]
+  dark:bg-[url('/images/textureYellowDark.png')]
+  bg-repeat
+  bg-[length:400px_400px]
+`

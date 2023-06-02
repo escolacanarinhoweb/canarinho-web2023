@@ -15,6 +15,10 @@
           "default_value": true
         }
       },
+      "text_registration": {
+        "type": "Text",
+        "config": { "label": "Texto Pré-Matricula", "placeholder": "" }
+      },
       "link_pre_registration": {
         "type": "Link",
         "config": {
@@ -23,6 +27,10 @@
           "allowTargetBlank": true,
           "select": null
         }
+      },
+      "text_responsible_space": {
+        "type": "Text",
+        "config": { "label": "Text Espaço do Responsável", "placeholder": "" }
       },
       "link_responsible_space": {
         "type": "Link",
@@ -36,12 +44,7 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "menu_submenu": { "type": "SharedSlice" },
-            "social": { "type": "SharedSlice" }
-          }
-        }
+        "config": { "choices": { "menu_submenu": { "type": "SharedSlice" } } }
       }
     }
   }

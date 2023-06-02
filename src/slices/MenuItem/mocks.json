@@ -2,24 +2,29 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "east",
+				"type": "Text"
+			},
+			"link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"pai_do_item",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "bone",
-							"type": "Text"
-						}
-					],
-					[
 						"name",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "listen",
+							"value": "any",
 							"type": "Text"
 						}
 					],
@@ -29,7 +34,7 @@
 							"__TYPE__": "LinkContent",
 							"value": {
 								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io"
+								"url": "http://twitter.com"
 							}
 						}
 					]

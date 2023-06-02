@@ -14,12 +14,12 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1272.9 789.3"
 	 style="enable-background:new 0 0 1272.9 789.3;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#092D54;stroke:#0C3E6B;stroke-width:6;stroke-miterlimit:10;}
+	.st0{fill:#092D54;stroke:#0C3E6B;strokeWidth:6;stroke-miterlimit:10;}
 	.st1{fill:#F3D254;}
 	.st2{fill:#FFFFFF;}
 	.st3{fill:#77E0B5;}
-	.st4{fill:#F3D254;stroke:#0C3E6B;stroke-width:6;stroke-miterlimit:10;}
-	.st5{fill:#092D54;stroke:#2176B7;stroke-width:0.9248;stroke-miterlimit:10;}
+	.st4{fill:#F3D254;stroke:#0C3E6B;strokeWidth:6;stroke-miterlimit:10;}
+	.st5{fill:#092D54;stroke:#2176B7;strokeWidth:0.9248;stroke-miterlimit:10;}
 	.st6{fill:#60B5E4;}
 	.st7{fill:#F582AE;}
 </style>
@@ -108,13 +108,13 @@
 			<g id="Number_4_in_red_00000039840363318916128070000005417287044043596694_">
 				<g>
 					<g>
-						
+
 							<rect x="951.4" y="361.6" transform="matrix(0.9957 -9.241192e-02 9.241192e-02 0.9957 -31.5431 90.2187)" class="st0" width="14" height="48.3"/>
 					</g>
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="839.6" y="373" transform="matrix(0.9957 -9.241192e-02 9.241192e-02 0.9957 -33.0783 79.9352)" class="st0" width="14" height="48.3"/>
 					</g>
 				</g>
@@ -218,13 +218,13 @@
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="957.1" y="360.8" transform="matrix(0.9703 -0.2417 0.2417 0.9703 -64.4602 244.4662)" class="st3" width="14" height="48.3"/>
 					</g>
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="845.3" y="372.2" transform="matrix(0.9703 -0.2417 0.2417 0.9703 -70.5401 217.7782)" class="st3" width="14" height="48.3"/>
 					</g>
 				</g>
@@ -257,13 +257,13 @@
 			<g id="The_number_4_is_green_00000129206646375178262520000012108025230131959454_">
 				<g>
 					<g>
-						
+
 							<rect x="370.4" y="391.4" transform="matrix(9.241192e-02 -0.9957 0.9957 9.241192e-02 -38.6519 754.4269)" class="st0" width="48.3" height="14"/>
 					</g>
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="258.6" y="380" transform="matrix(9.241192e-02 -0.9957 0.9957 9.241192e-02 -128.7417 632.7189)" class="st0" width="48.3" height="14"/>
 					</g>
 				</g>
@@ -449,13 +449,13 @@
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="252.9" y="379.2" transform="matrix(0.2417 -0.9703 0.9703 0.2417 -164.7144 561.6498)" class="st7" width="48.3" height="14"/>
 					</g>
 				</g>
 				<g>
 					<g>
-						
+
 							<rect x="364.7" y="390.7" transform="matrix(0.2417 -0.9703 0.9703 0.2417 -91.029 678.8131)" class="st7" width="48.3" height="14"/>
 					</g>
 				</g>

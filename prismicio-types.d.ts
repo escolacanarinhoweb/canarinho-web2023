@@ -366,6 +366,40 @@ export type NavSideDocument<Lang extends string = string> =
     'nav_side',
     Lang
   >
+/** Content for Menu Social documents */
+interface NavSocialDocumentData {
+  /**
+   * Slice Zone field in *Menu Social*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_social.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<NavSocialDocumentDataSlicesSlice>
+}
+/**
+ * Slice for *Menu Social → Slice Zone*
+ *
+ */
+type NavSocialDocumentDataSlicesSlice = SocialSlice
+/**
+ * Menu Social document from Prismic
+ *
+ * - **API ID**: `nav_social`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavSocialDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavSocialDocumentData>,
+    'nav_social',
+    Lang
+  >
 /** Content for Menu Superior documents */
 interface NavTopDocumentData {
   /**
@@ -381,6 +415,17 @@ interface NavTopDocumentData {
    */
   button_language: prismic.BooleanField
   /**
+   * Texto Pré-Matricula field in *Menu Superior*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_top.text_registration
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text_registration: prismic.KeyTextField
+  /**
    * Link Pré-Matricula field in *Menu Superior*
    *
    * - **Field Type**: Link
@@ -391,6 +436,17 @@ interface NavTopDocumentData {
    *
    */
   link_pre_registration: prismic.LinkField
+  /**
+   * Text Espaço do Responsável field in *Menu Superior*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nav_top.text_responsible_space
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text_responsible_space: prismic.KeyTextField
   /**
    * Link Espaço do Responsável field in *Menu Superior*
    *
@@ -418,7 +474,7 @@ interface NavTopDocumentData {
  * Slice for *Menu Superior → Slice Zone*
  *
  */
-type NavTopDocumentDataSlicesSlice = MenuSubmenuSlice | SocialSlice
+type NavTopDocumentDataSlicesSlice = MenuSubmenuSlice
 /**
  * Menu Superior document from Prismic
  *
@@ -540,6 +596,7 @@ export type AllDocumentTypes =
   | FooterDocument
   | HomeDocument
   | NavSideDocument
+  | NavSocialDocument
   | NavTopDocument
   | PageDocument
 /**
@@ -954,12 +1011,38 @@ type MenuSliceVariation = MenuSliceDefault
  */
 export type MenuSlice = prismic.SharedSlice<'menu', MenuSliceVariation>
 /**
- * Item in MenuSubmenu → Items
+ * Primary content in MenuItem → Primary
+ *
+ */
+interface MenuSubmenuSliceDefaultPrimary {
+  /**
+   * Nome do item field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_submenu.primary.name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismic.KeyTextField
+  /**
+   * Link do item field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_submenu.primary.link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismic.LinkField
+}
+/**
+ * Item in MenuItem → Items
  *
  */
 export interface MenuSubmenuSliceDefaultItem {
   /**
-   * Nome do item field in *MenuSubmenu → Items*
+   * Nome do subitem field in *MenuItem → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -969,7 +1052,7 @@ export interface MenuSubmenuSliceDefaultItem {
    */
   name: prismic.KeyTextField
   /**
-   * Link do item field in *MenuSubmenu → Items*
+   * Link do subitem field in *MenuItem → Items*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -978,19 +1061,9 @@ export interface MenuSubmenuSliceDefaultItem {
    *
    */
   link: prismic.LinkField
-  /**
-   * Pai do item field in *MenuSubmenu → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Preencher somente se esse item for um submenu
-   * - **API ID Path**: menu_submenu.items[].pai_do_item
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  pai_do_item: prismic.KeyTextField
 }
 /**
- * Default variation for MenuSubmenu Slice
+ * Default variation for MenuItem Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
@@ -999,16 +1072,16 @@ export interface MenuSubmenuSliceDefaultItem {
  */
 export type MenuSubmenuSliceDefault = prismic.SharedSliceVariation<
   'default',
-  Record<string, never>,
+  Simplify<MenuSubmenuSliceDefaultPrimary>,
   Simplify<MenuSubmenuSliceDefaultItem>
 >
 /**
- * Slice variation for *MenuSubmenu*
+ * Slice variation for *MenuItem*
  *
  */
 type MenuSubmenuSliceVariation = MenuSubmenuSliceDefault
 /**
- * MenuSubmenu Shared Slice
+ * MenuItem Shared Slice
  *
  * - **API ID**: `menu_submenu`
  * - **Description**: `MenuSubmenu`
@@ -1519,6 +1592,9 @@ declare module '@prismicio/client' {
       NavSideDocumentData,
       NavSideDocumentDataSlicesSlice,
       NavSideDocument,
+      NavSocialDocumentData,
+      NavSocialDocumentDataSlicesSlice,
+      NavSocialDocument,
       NavTopDocumentData,
       NavTopDocumentDataSlicesSlice,
       NavTopDocument,
@@ -1553,6 +1629,7 @@ declare module '@prismicio/client' {
       MenuSliceDefault,
       MenuSliceVariation,
       MenuSlice,
+      MenuSubmenuSliceDefaultPrimary,
       MenuSubmenuSliceDefaultItem,
       MenuSubmenuSliceDefault,
       MenuSubmenuSliceVariation,
