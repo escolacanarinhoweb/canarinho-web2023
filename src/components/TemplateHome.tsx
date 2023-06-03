@@ -2,17 +2,40 @@
 
 import { SmootherProvider } from '@/contexts/SmootherContext'
 import { TemplateHeader, TemplateHeaderProps } from './TemplateHeader'
+import { SliceZone } from '@prismicio/react'
+import BannerHome from '@/slices/BannerHome'
+import Modalidades from '@/slices/Modalidades'
+import NossaEscola from '@/slices/NossaEscola'
+import TourVirtual from '@/slices/TourVirtual'
+import VideoYoutube from '@/slices/VideoYoutube'
+import Depoimentos from '@/slices/Depoimentos'
+import FotosInstagram from '@/slices/FotosInstagram'
 
-interface TemplateHomeProps extends TemplateHeaderProps {}
+interface TemplateHomeProps {
+  header: TemplateHeaderProps
+  home: {
+    slices: any[]
+  }
+}
 
 export const TemplateHome = (props: TemplateHomeProps) => {
   return (
     <div className={Wrapper}>
-      <TemplateHeader {...props} />
+      <TemplateHeader {...props.header} />
       <main className={Main}>
         <SmootherProvider>
-          <h1 className="h-[200vh]">teste</h1>
-          teste
+          <SliceZone
+            slices={props.home.slices}
+            components={{
+              banner_home: BannerHome,
+              modalidades: Modalidades,
+              nossa_escola: NossaEscola,
+              tour_virtual: TourVirtual,
+              video_youtube: VideoYoutube,
+              depoimentos: Depoimentos,
+              fotos_instagram: FotosInstagram
+            }}
+          />
         </SmootherProvider>
       </main>
     </div>

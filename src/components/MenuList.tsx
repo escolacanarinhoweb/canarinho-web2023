@@ -7,12 +7,12 @@ export interface MenuListProps {
   slices: SliceZone<MenuSubmenuSlice>
 }
 
-export const MenuList = ({ slices }: MenuListProps) => {
+export const MenuList = (props: MenuListProps) => {
   const locale = useLocale()
 
   return (
     <div className={Wrapper}>
-      {slices.map((slice, index) => {
+      {props.slices.map((slice, index) => {
         return (
           <div className={Item} key={index}>
             <PrismicNextLink field={slice.primary.link} locale={locale}>

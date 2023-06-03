@@ -4,17 +4,17 @@ import { SmootherProvider } from '@/contexts/SmootherContext'
 import { TemplateHeader, TemplateHeaderProps } from './TemplateHeader'
 import { KeyTextField } from '@prismicio/client'
 
-interface TemplatePageProps extends TemplateHeaderProps {
-  title: KeyTextField
+interface TemplatePageProps {
+  header: TemplateHeaderProps
 }
 
 export const TemplatePage = (props: TemplatePageProps) => {
   return (
     <div className={Wrapper}>
-      <TemplateHeader {...props} />
+      <TemplateHeader {...props.header} />
       <main className={Main}>
         <SmootherProvider>
-          <h1 className="h-[200vh]">{props.title}</h1>
+          <h1 className="h-[200vh]">olar</h1>
         </SmootherProvider>
       </main>
     </div>

@@ -19,19 +19,18 @@ export default async function Page({ params }: PageProps) {
     lang: params.locale
   })
 
+  const header = {
+    menu: navTop.data,
+    social: navSocial.data.slices,
+    text_registration: navTop.data.text_registration,
+    link_pre_registration: navTop.data.link_pre_registration,
+    text_responsible_space: navTop.data.text_responsible_space,
+    link_responsible_space: navTop.data.link_responsible_space
+  }
+
   const page = await client.getByUID('page', params.uid, {
     lang: params.locale
   })
 
-  return (
-    <TemplatePage
-      social={navSocial.data.slices}
-      link_responsible_space={navTop.data.link_responsible_space}
-      text_responsible_space={navTop.data.text_responsible_space}
-      link_pre_registration={navTop.data.link_pre_registration}
-      text_registration={navTop.data.text_registration}
-      slices={navTop.data.slices}
-      title={page.data.title}
-    />
-  )
+  return <TemplatePage header={header} />
 }

@@ -1,7 +1,151 @@
-export const IconHeroBgBaby = () => {
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+
+interface Props {
+  className?: string
+}
+
+export const BgBaby = ({ className }: Props) => {
+  useEffect(() => {
+    const heroGrab = document.getElementById('heroGrab')
+    const heroStar = document.getElementById('heroStar')
+    const heroHorse = document.getElementById('heroHorse')
+    const heroShell = document.getElementById('heroShell')
+    const heroJellyfish = document.getElementById('heroJellyfish')
+    const heroFish2 = document.getElementById('heroFish2')
+    const heroFish1 = document.getElementById('heroFish1')
+    const heroBubble4 = document.getElementById('heroBubble4')
+    const heroBubble3 = document.getElementById('heroBubble3')
+    const heroBubble2 = document.getElementById('heroBubble2')
+    const heroBubble1 = document.getElementById('heroBubble1')
+
+    const ctx = gsap.context(() => {
+      const handleGrab = (el: Element) => {
+        gsap.fromTo(
+          el,
+          {
+            x: '40vh',
+            y: '-200%'
+          },
+          {
+            x: '-100vh',
+            y: 0,
+            duration: 10,
+            ease: 'power2.out',
+            repeat: -1,
+            repeatDelay: 1,
+            yoyo: true
+          }
+        )
+      }
+
+      handleGrab(heroGrab!)
+
+      const handleStarAndShell = (el: Element) => {
+        gsap.to(el, {
+          skewX: -10,
+          transformOrigin: '50% 50%',
+          duration: 1,
+          ease: 'power2.out',
+          repeat: -1,
+          yoyo: true
+        })
+      }
+
+      handleStarAndShell(heroStar!)
+      handleStarAndShell(heroShell!)
+
+      const handleHorseAndJelly = (el: Element) => {
+        gsap.to(el, {
+          x: '-=10',
+          y: '+=30',
+          duration: 3,
+          ease: 'power2.inOut',
+          repeat: -1,
+          yoyo: true
+        })
+      }
+
+      handleHorseAndJelly(heroHorse!)
+      handleHorseAndJelly(heroJellyfish!)
+
+      const handleFish1 = (el: Element) => {
+        gsap.fromTo(
+          el,
+          {
+            x: '80vh',
+            y: '-200%'
+          },
+          {
+            x: '-60vh',
+            y: 0,
+            duration: 10,
+            ease: 'power2.out',
+            repeat: -1,
+            repeatDelay: 1
+          }
+        )
+      }
+
+      handleFish1(heroFish1!)
+
+      const handleFish2 = (el: Element) => {
+        gsap.fromTo(
+          el,
+          {
+            x: '-80vh',
+            y: '-200%'
+          },
+          {
+            x: '60vh',
+            y: 0,
+            duration: 10,
+            ease: 'power2.out',
+            repeat: -1,
+            repeatDelay: 1
+          }
+        )
+      }
+
+      handleFish2(heroFish2!)
+
+      const handleBubble = (el: Element, delay: number) => {
+        gsap.fromTo(
+          el,
+          {
+            y: '100vh',
+            transformOrigin: '50% 50%',
+            scale: 0,
+            opacity: 0
+          },
+          {
+            y: '-100vh',
+            transformOrigin: '50% 50%',
+            scale: 2,
+            opacity: 1,
+            duration: 10,
+            delay: delay,
+            repeat: -1
+          }
+        )
+      }
+
+      handleBubble(heroBubble1!, 0)
+      handleBubble(heroBubble2!, 1)
+      handleBubble(heroBubble3!, 2)
+      handleBubble(heroBubble4!, 3)
+    })
+  }, [])
+
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-      <g id="siri_00000023989659920753626570000016645070100164520878_">
+    <svg
+      id="bgBaby"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1920 1080"
+      fill="currentColor"
+    >
+      <g id="heroGrab">
         <g id="siri">
           <path
             className="st0"
@@ -17,7 +161,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="estrela_00000031893856628576393250000015436272443427533440_">
+      <g id="heroStar">
         <g id="estrela">
           <path
             className="st1"
@@ -29,7 +173,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="submarino_00000045607907837848146070000002431649063978693030_">
+      <g id="heroSubmarine" className="hidden">
         <g id="submarino">
           <path
             className="st1"
@@ -61,7 +205,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="cavalo_00000148652795944786524370000002873366607432762537_">
+      <g id="heroHorse">
         <g id="cavalo">
           <path
             className="st1"
@@ -73,7 +217,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="concha">
+      <g id="heroShell">
         <g id="conchas">
           <path
             className="st1"
@@ -81,7 +225,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="aguaviva_00000065781875443775267300000011041798068222597524_">
+      <g id="heroJellyfish">
         <g id="aguaviva">
           <path
             className="st1"
@@ -97,7 +241,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="peixe-2_00000136401166987045900670000011726130708066331049_">
+      <g id="heroFish2">
         <g id="peixe-2">
           <path
             className="st1"
@@ -109,7 +253,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="peixe-1_00000166637471226237501220000009914598454107811202_">
+      <g id="heroFish1">
         <g id="peixe-1">
           <path
             className="st1"
@@ -121,7 +265,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="bolha-4">
+      <g id="heroBubble4" className="opacity-0">
         <g id="bolhas-4">
           <path
             className="st1"
@@ -135,7 +279,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="bolha-3">
+      <g id="heroBubble3" className="opacity-0">
         <g id="bolhas-3_00000042706001680172028730000001289275186109863074_">
           <path
             className="st1"
@@ -143,7 +287,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="bolha-2">
+      <g id="heroBubble2" className="opacity-0">
         <g id="bolhas-2">
           <path
             className="st1"
@@ -151,7 +295,7 @@ export const IconHeroBgBaby = () => {
           />
         </g>
       </g>
-      <g id="bolha-1">
+      <g id="heroBubble1" className="opacity-0">
         <g id="bolhas-1">
           <path
             className="st1"

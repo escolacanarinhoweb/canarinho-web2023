@@ -19,14 +19,18 @@ export default async function Home({ params }: HomeProps) {
     lang: params.locale
   })
 
-  return (
-    <TemplateHome
-      social={navSocial.data.slices}
-      link_responsible_space={navTop.data.link_responsible_space}
-      text_responsible_space={navTop.data.text_responsible_space}
-      link_pre_registration={navTop.data.link_pre_registration}
-      text_registration={navTop.data.text_registration}
-      slices={navTop.data.slices}
-    />
-  )
+  const header = {
+    menu: navTop.data,
+    social: navSocial.data.slices,
+    text_registration: navTop.data.text_registration,
+    link_pre_registration: navTop.data.link_pre_registration,
+    text_responsible_space: navTop.data.text_responsible_space,
+    link_responsible_space: navTop.data.link_responsible_space
+  }
+
+  const home = await client.getSingle('home', {
+    lang: params.locale
+  })
+
+  return <TemplateHome header={header} home={home.data} />
 }

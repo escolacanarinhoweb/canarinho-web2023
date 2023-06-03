@@ -1,6 +1,40 @@
-export default function IconSubmarine() {
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+
+interface Props {
+  className?: string
+}
+
+export default function Submarine({ className }: Props) {
+  useEffect(() => {
+    const submarine = document.getElementById('submarine')
+
+    const ctx = gsap.context(() => {
+      gsap.set(submarine, {
+        x: 100
+      })
+      gsap.to(submarine, {
+        rotate: 15,
+        transformOrigin: '0% 100%',
+        duration: 15,
+        repeat: -1,
+        yoyo: true,
+        ease: 'none'
+      })
+    })
+
+    return () => {
+      ctx.revert()
+    }
+  }, [])
+
   return (
-    <svg viewBox="0 0 348.3 358.9">
+    <svg
+      viewBox="0 0 348.3 358.9"
+      className={className}
+      fill="currentColor"
+      id="submarine"
+    >
       <g id="bolhas2">
         <g id="bolhas_4_">
           <path

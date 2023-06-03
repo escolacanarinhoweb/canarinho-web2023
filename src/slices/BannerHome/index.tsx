@@ -1,3 +1,4 @@
+import { SliceBannerHome } from '@/components/SliceBannerHome'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -9,14 +10,13 @@ export type BannerHomeProps = SliceComponentProps<Content.BannerHomeSlice>
 /**
  * Component for "BannerHome" Slices.
  */
-const BannerHome = ({ slice }: BannerHomeProps): JSX.Element => {
+const BannerHome = (props: BannerHomeProps): JSX.Element => {
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
+      data-slice-type={props.slice.slice_type}
+      data-slice-variation={props.slice.variation}
     >
-      Placeholder component for banner_home (variation: {slice.variation})
-      Slices
+      <SliceBannerHome {...props} />
     </section>
   )
 }

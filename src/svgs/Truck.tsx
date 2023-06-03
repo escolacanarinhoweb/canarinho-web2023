@@ -1,14 +1,50 @@
-export default function IconCaminhao() {
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+
+interface Props {
+  className?: string
+}
+
+export default function Truck({ className }: Props) {
+  useEffect(() => {
+    const truck = document.getElementById('heroTruck2')
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        truck,
+        {
+          x: '80vh',
+          y: '40%',
+          scale: 0.8
+        },
+        {
+          x: '-140vh',
+          y: '40%',
+          scale: 0.8,
+          duration: 6,
+          ease: 'none',
+          repeat: -1,
+          repeatDelay: 3
+        }
+      )
+    })
+
+    return () => {
+      ctx.revert()
+    }
+  }, [])
   return (
     <svg
+      id="heroTruck2"
+      className={className}
       version="1.1"
-      id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       x="0"
       y="0"
       viewBox="0 0 513 399"
+      fill="currentColor"
     >
-      <g id="caminhao">
+      <g>
         <path
           className="st0"
           d="M64.41 307.56c-6.25-6.46-22.51-4.79-30.43-3.96-3.96.42-9.59.63-12.71 3.54-2.92 2.92-3.75 8.13-4.17 11.88-1.46 10.84.21 23.76 12.51 26.47 10.63 2.29 22.51.63 33.14-1.25 1.67-.21 2.71-2.08 2.71-3.54v-30.64c0-4.79-7.29-4.79-7.29 0v30.64c.83-1.25 1.88-2.29 2.71-3.54-6.88 1.25-13.96 1.88-21.05 1.88-4.17 0-10.21.21-13.13-2.92-3.13-3.33-2.92-9.8-2.5-13.96.21-2.29.42-7.92 2.08-9.59 1.88-1.88 7.5-1.67 10-1.88 4.59-.42 9.17-.21 13.76 0 2.29.21 7.5 0 9.38 1.88 2.91 3.74 8.12-1.47 4.99-5.01z"

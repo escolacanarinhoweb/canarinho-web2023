@@ -7,7 +7,7 @@ import { MenuList, MenuListProps } from './MenuList'
 import { PrismicLink } from '@prismicio/react'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import { KeyTextField, LinkField, SliceZone } from '@prismicio/client'
-import { SocialSlice } from '../../prismicio-types'
+import { MenuSubmenuSlice, SocialSlice } from '../../prismicio-types'
 import { Container } from './Container'
 import { ButtonLanguage } from './ButtonLanguage'
 import IconOpenMenu from '@/svgs/IconOpenMenu'
@@ -16,7 +16,10 @@ import { ButtonTheme } from './ButtonTheme'
 import { Logo } from './Logo'
 import { useLocale } from 'next-intl'
 
-export interface TemplateHeaderProps extends MenuListProps {
+export interface TemplateHeaderProps {
+  menu: {
+    slices: SliceZone<MenuSubmenuSlice>
+  }
   social: SliceZone<SocialSlice>
   text_registration: KeyTextField
   link_pre_registration: LinkField | null
@@ -97,7 +100,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
               isScrolling ? 'text-blue-500' : 'text-white'
             }`}
           >
-            <MenuList {...props} />
+            <MenuList slices={props.menu.slices} />
           </div>
 
           <div className={SettingsBox}>
