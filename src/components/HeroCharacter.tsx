@@ -14,7 +14,7 @@ export const HeroCharacter = ({ char }: CharacterProps) => {
           <Image
             priority
             className={ShadowBox}
-            src="/images/heroGirlShadow.png"
+            src={`/images/hero${char}Shadow.png`}
             width={884}
             height={943}
             alt="sombra do personagem com uniforme da Escola Canarinho"
