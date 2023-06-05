@@ -194,14 +194,14 @@ interface FooterDocumentData {
   /**
    * Informações unicade 2 field in *Rodapé*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: ex: EQN 208/408...
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: footer.info_unity2
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
    *
    */
-  info_unity2: prismic.KeyTextField
+  info_unity2: prismic.RichTextField
   /**
    * Localização unidade 2 field in *Rodapé*
    *

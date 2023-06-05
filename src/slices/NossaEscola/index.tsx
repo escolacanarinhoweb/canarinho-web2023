@@ -1,3 +1,4 @@
+import { SliceNossaEscola } from '@/components/SliceNossaEscola'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -9,14 +10,13 @@ export type NossaEscolaProps = SliceComponentProps<Content.NossaEscolaSlice>
 /**
  * Component for "NossaEscola" Slices.
  */
-const NossaEscola = ({ slice }: NossaEscolaProps): JSX.Element => {
+const NossaEscola = (props: NossaEscolaProps): JSX.Element => {
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
+      data-slice-type={props.slice.slice_type}
+      data-slice-variation={props.slice.variation}
     >
-      Placeholder component for nossa_escola (variation: {slice.variation})
-      Slices
+      <SliceNossaEscola {...props} />
     </section>
   )
 }

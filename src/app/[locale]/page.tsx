@@ -19,18 +19,28 @@ export default async function Home({ params }: HomeProps) {
     lang: params.locale
   })
 
+  const navSide = await client.getSingle('nav_side', {
+    lang: params.locale
+  })
+
   const header = {
     menu: navTop.data,
     social: navSocial.data.slices,
+    button_language: navTop.data.button_language,
     text_registration: navTop.data.text_registration,
     link_pre_registration: navTop.data.link_pre_registration,
     text_responsible_space: navTop.data.text_responsible_space,
-    link_responsible_space: navTop.data.link_responsible_space
+    link_responsible_space: navTop.data.link_responsible_space,
+    menuSide: navSide
   }
+
+  const footer = await client.getSingle('footer', {
+    lang: params.locale
+  })
 
   const home = await client.getSingle('home', {
     lang: params.locale
   })
 
-  return <TemplateHome header={header} home={home.data} />
+  return <TemplateHome header={header} home={home.data} footer={footer} />
 }

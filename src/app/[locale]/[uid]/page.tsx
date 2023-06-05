@@ -19,18 +19,27 @@ export default async function Page({ params }: PageProps) {
     lang: params.locale
   })
 
+  const navSide = await client.getSingle('nav_side', {
+    lang: params.locale
+  })
+
   const header = {
     menu: navTop.data,
     social: navSocial.data.slices,
     text_registration: navTop.data.text_registration,
     link_pre_registration: navTop.data.link_pre_registration,
     text_responsible_space: navTop.data.text_responsible_space,
-    link_responsible_space: navTop.data.link_responsible_space
+    link_responsible_space: navTop.data.link_responsible_space,
+    menuSide: navSide
   }
+
+  const footer = await client.getSingle('footer', {
+    lang: params.locale
+  })
 
   const page = await client.getByUID('page', params.uid, {
     lang: params.locale
   })
 
-  return <TemplatePage header={header} />
+  return <TemplatePage header={header} page={page} footer={footer} />
 }

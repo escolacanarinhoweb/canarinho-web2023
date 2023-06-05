@@ -413,6 +413,13 @@
   dependencies:
     tslib "^2.4.0"
 
+"@googlemaps/js-api-loader@^1.14.3":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.15.2.tgz#470be4454f4f31d7575ef297d8752dd87975162b"
+  integrity sha512-8FJwvd1F5Zxs/kDuH/ESFwSjOY0ZyGVkPDyv2VmC9cg8n1vPUKmvZJh/EzoikC/Z5itGMTRfcxmvSapXAi0+zQ==
+  dependencies:
+    fast-deep-equal "^3.1.3"
+
 "@gsap/shockingly@npm:@gsap/shockingly":
   version "3.11.5"
   resolved "https://npm.greensock.com/@gsap%2fshockingly/-/shockingly-3.11.5.tgz#4dd2c9e37dcb6e989ce11e8ee940623faf627f46"
@@ -1540,6 +1547,11 @@
     "@swc/helpers" "^0.4.14"
     clsx "^1.1.1"
 
+"@react-leaflet/core@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@react-leaflet/core/-/core-2.1.0.tgz#383acd31259d7c9ae8fb1b02d5e18fe613c2a13d"
+  integrity sha512-Qk7Pfu8BSarKGqILj4x7bCSZ1pjuAPZ+qmRwH5S7mDS91VSbVVsJSrW4qA+GPrro8t69gFYVMWb1Zc4yFmPiVg==
+
 "@react-stately/calendar@3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@react-stately/calendar/-/calendar-3.1.0.tgz#3254ab630972f5bfeedf821a3580ad83bc087e2e"
@@ -1847,16 +1859,16 @@
     pascal-case "^3.1.2"
     prismic-ts-codegen "0.1.9"
 
-"@slicemachine/manager@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@slicemachine/manager/-/manager-0.3.0.tgz#8dbc6b086cc8493abe3670f06b8c21ee531db29a"
-  integrity sha512-8yXtDpsqhhR8DEwF7LPdxOo88ATHkSkmOz0zh9KziGOwvDkkUVlk5fYNrE5HI9sQYxJqB+Gzmq7zOary15jLgQ==
+"@slicemachine/manager@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@slicemachine/manager/-/manager-0.3.1.tgz#ba187f3b1b0439d1955c74655a8f740116393967"
+  integrity sha512-lj+zdivDmszKpug4IplojWMieDs6FvXFhZr1NgpKhY9EGnkq6Shg9ryEWUrtPXME37RJpC66KpLqR3xVNnSbuw==
   dependencies:
     "@antfu/ni" "^0.20.0"
     "@prismicio/custom-types-client" "1.2.0-alpha.0"
     "@prismicio/mocks" "2.0.0-alpha.2"
     "@prismicio/types-internal" "2.0.0-beta.1"
-    "@slicemachine/plugin-kit" "0.3.0"
+    "@slicemachine/plugin-kit" "0.3.1"
     "@wooorm/starry-night" "^1.6.0"
     analytics-node "^6.2.0"
     cookie "^0.5.0"
@@ -1886,6 +1898,19 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@slicemachine/plugin-kit/-/plugin-kit-0.3.0.tgz#e3fb8dfd0ebec50ff8e9f00169a58d711c820cf3"
   integrity sha512-uAC7ofpD7Db4bbO8x3MYiKakQpjDZdSBrimdXCxIw7hBisWFFFr+ISULvxubjlU16CbW2rGLFbhx5Ko7eTpLOg==
+  dependencies:
+    "@prismicio/types-internal" "2.0.0-beta.1"
+    common-tags "^1.8.2"
+    defu "^6.1.2"
+    fp-ts "^2.13.1"
+    io-ts "^2.2.20"
+    io-ts-reporters "^2.0.1"
+    prettier "^2.8.4"
+
+"@slicemachine/plugin-kit@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@slicemachine/plugin-kit/-/plugin-kit-0.3.1.tgz#bc0532e5c0609a04983fcff528187590ef9cd643"
+  integrity sha512-XG5zfvEu6SVKSL5f9itNTxjUnYR9rOJ9YT3lNngmjs4ldq4qkdgJqPTrOg3nEfsLXPXkFFCVKCGDbS6zfKDwkg==
   dependencies:
     "@prismicio/types-internal" "2.0.0-beta.1"
     common-tags "^1.8.2"
@@ -2054,6 +2079,11 @@
   dependencies:
     "@types/ms" "*"
 
+"@types/geojson@*":
+  version "7946.0.10"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.10.tgz#6dfbf5ea17142f7f9a043809f1cd4c448cb68249"
+  integrity sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==
+
 "@types/hast@^2.0.0":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@types/hast/-/hast-2.3.4.tgz#8aa5ef92c117d20d974a82bdfb6a648b08c0bafc"
@@ -2072,6 +2102,13 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/leaflet@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.9.3.tgz#7aac302189eb3aa283f444316167995df42a5467"
+  integrity sha512-Caa1lYOgKVqDkDZVWkto2Z5JtVo09spEaUt2S69LiugbBpoqQu92HYFMGUbYezZbnBkyOxMNPXHSgRrRY5UyIA==
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/lodash@^4.14.175":
   version "4.14.195"
@@ -4782,6 +4819,24 @@ language-tags@=1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
+leaflet-defaulticon-compatibility@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/leaflet-defaulticon-compatibility/-/leaflet-defaulticon-compatibility-0.1.1.tgz#ab72257b3da66fb48dab69a10c3824012a15a20a"
+  integrity sha512-vDBFdlUAwjSEGep9ih8kfJilf6yN8V9zTbF5NC/1ZwLeGko3RUQepspPnGCRMFV51dY3Lb3hziboicrFz+rxQA==
+
+leaflet-geosearch@3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/leaflet-geosearch/-/leaflet-geosearch-3.8.0.tgz#c792a71cc3c960d9396b7c1ad9ab6a8ffdd033f3"
+  integrity sha512-YYFigq2JkqaZrgEjxWyvyQy4seh0Il9xPlG+IP2Z3+K7DrQ+bYc7qDizmxKbAn2jSNUCvokz75gXj7wXcFDB9A==
+  optionalDependencies:
+    "@googlemaps/js-api-loader" "^1.14.3"
+    leaflet "^1.6.0"
+
+leaflet@1.9.4, leaflet@^1.6.0:
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.4.tgz#23fae724e282fa25745aff82ca4d394748db7d8d"
+  integrity sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -6369,6 +6424,13 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-leaflet@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-4.2.1.tgz#c300e9eccaf15cb40757552e181200aa10b94780"
+  integrity sha512-p9chkvhcKrWn/H/1FFeVSqLdReGwn2qmiobOQGO3BifX+/vV/39qhY8dGqbdcPh1e6jxh/QHriLXr7a4eLFK4Q==
+  dependencies:
+    "@react-leaflet/core" "^2.1.0"
+
 react-property@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-property/-/react-property-2.0.0.tgz#2156ba9d85fa4741faf1918b38efc1eae3c6a136"
@@ -6712,10 +6774,10 @@ slash@^4.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
 
-slice-machine-ui@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.1.0.tgz#b85d8a01cf469dcb693fe760ca34493b38414929"
-  integrity sha512-OScoUyj4drVXonmQP6Ltw6piq3T3y22sxTRTqYou025qeM7vncdARsZxHBCQPJGdi5TZk3GmS4sPYu+m1IRDcQ==
+slice-machine-ui@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.1.1.tgz#5b65abfba140d86ad240cb55cf769a5440607db0"
+  integrity sha512-bGmpFLapfLo5WJAvmfgdbVv1ONH09DZB1TD1Y/zjQMu6Yu1QHF7WiyufduCRcTlye2wnWZryNikFI0+rlcJDDQ==
   dependencies:
     "@extractus/oembed-extractor" "^3.1.8"
     "@prismicio/editor-fields" "0.4.1"
@@ -6723,7 +6785,7 @@ slice-machine-ui@^1.1.0:
     "@prismicio/editor-ui" "0.4.1"
     "@prismicio/mocks" "2.0.0-alpha.2"
     "@prismicio/types-internal" "2.0.0-beta.1"
-    "@slicemachine/manager" "0.3.0"
+    "@slicemachine/manager" "0.3.1"
     "@vanilla-extract/css" "1.11.0"
     clsx "1.2.1"
     fast-deep-equal "^3.1.3"
@@ -6737,7 +6799,7 @@ slice-machine-ui@^1.1.0:
     puppeteer "^19.11.0"
     react "^18.2.0"
     semver "^7.3.8"
-    start-slicemachine "0.8.0"
+    start-slicemachine "0.8.1"
     yup "^0.32.11"
 
 source-map-js@^1.0.2:
@@ -6781,12 +6843,12 @@ ssr-window@^4.0.2:
   resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.2.tgz#dc6b3ee37be86ac0e3ddc60030f7b3bc9b8553be"
   integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
 
-start-slicemachine@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/start-slicemachine/-/start-slicemachine-0.8.0.tgz#dc9a05afa8b677cc0d16f5a32507f9e66e3d99cb"
-  integrity sha512-/T3XucwSEh8HcEfRNRk4vjnX2jeQfmAf5e5jefnZ0hSId4Ozv34rYIovxyMdDcewVb6ApVEaDh9Or8h72RXd8A==
+start-slicemachine@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/start-slicemachine/-/start-slicemachine-0.8.1.tgz#2d29d71e996400fef42fef4be585c189c9c3ad9b"
+  integrity sha512-kXG83poCU+SFQcDx+RF7eY6uFrezuwq8caBuqaCUl+hr9ChPREV5BcQGgPQ7Pmd8Z8Vvsm/FhaLnWhlFQfC7jw==
   dependencies:
-    "@slicemachine/manager" "0.3.0"
+    "@slicemachine/manager" "0.3.1"
     body-parser "^1.20.2"
     chalk "^4.1.2"
     cors "^2.8.5"

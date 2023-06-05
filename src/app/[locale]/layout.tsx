@@ -54,6 +54,7 @@ export default function RootLayout({ children, params }: LayoutProps) {
 
 const Body = `
   font-sans
+  text-gray-500
   bg-yellow-400
   dark:bg-yellow-900
   bg-[url('/images/textureYellow.png')]

@@ -1,6 +1,10 @@
-.heroBGContainer {
-  /* clip-path: url(#maskBG); */
+[data-slice-zone-todo-component] {
+  display: none;
 }
-.heroBgAnimation {
-  /* clip-path: url(#maskBG); */
+
+.font-outline-2 {
+  -webkit-text-stroke: 2px white;
+}
+.font-outline-4 {
+  -webkit-text-stroke: 6px white;
 }

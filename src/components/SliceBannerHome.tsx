@@ -47,6 +47,10 @@ export const SliceBannerHome = (props: BannerHomeProps) => {
         parallaxIt(e, title, 50)
       })
     })
+
+    return () => {
+      ctx.revert()
+    }
   }, [])
 
   useEffect(() => {
@@ -92,6 +96,16 @@ export const SliceBannerHome = (props: BannerHomeProps) => {
         <HeroCharacter char={character} />
       </div>
 
+      <svg
+        className={Ball}
+        width="1008"
+        height="1008"
+        viewBox="0 0 1008 1008"
+        fill="currentColor"
+      >
+        <circle cx="504" cy="504" r="504" />
+      </svg>
+
       <div className={Title} ref={titleRef}>
         <TitleHero title="Seja um Canarinho" />
       </div>
@@ -105,7 +119,6 @@ const Wrapper = `
   lg:h-screen
   min-h-[600px]
   relative
-  overflow-hidden
 `
 const Layer = `
   w-full
@@ -125,4 +138,20 @@ const Character = `
 const Title = `
   ${Layer}
   z-20
+`
+
+const Ball = `
+  w-[2000px]
+  max-w-none
+  h-full
+  aspect-[1/1]
+  bottom-[-100vh]
+  left-1/2
+  transform
+  -translate-x-1/2
+  -translate-y-1/2
+  absolute
+  text-white
+  z-10
+  hidden
 `

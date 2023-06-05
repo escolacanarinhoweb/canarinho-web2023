@@ -1,3 +1,4 @@
+import { SliceTourVirtual } from '@/components/SliceTourVirtual'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -9,14 +10,13 @@ export type TourVirtualProps = SliceComponentProps<Content.TourVirtualSlice>
 /**
  * Component for "TourVirtual" Slices.
  */
-const TourVirtual = ({ slice }: TourVirtualProps): JSX.Element => {
+const TourVirtual = (props: TourVirtualProps): JSX.Element => {
   return (
     <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
+      data-slice-type={props.slice.slice_type}
+      data-slice-variation={props.slice.variation}
     >
-      Placeholder component for tour_virtual (variation: {slice.variation})
-      Slices
+      <SliceTourVirtual {...props} />
     </section>
   )
 }

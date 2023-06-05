@@ -135,6 +135,10 @@ export const BgBaby = ({ className }: Props) => {
       handleBubble(heroBubble3!, 2)
       handleBubble(heroBubble4!, 3)
     })
+
+    return () => {
+      ctx.revert()
+    }
   }, [])
 
   return (

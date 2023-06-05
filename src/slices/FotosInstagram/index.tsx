@@ -1,3 +1,4 @@
+import { SliceFotosInstagram } from '@/components/SliceFotosInstagram'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -10,14 +11,15 @@ export type FotosInstagramProps =
 /**
  * Component for "FotosInstagram" Slices.
  */
-const FotosInstagram = ({ slice }: FotosInstagramProps): JSX.Element => {
+const FotosInstagram = (props: FotosInstagramProps): JSX.Element => {
+  const { slice } = props
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for fotos_instagram (variation: {slice.variation})
-      Slices
+      <SliceFotosInstagram {...props} />
     </section>
   )
 }

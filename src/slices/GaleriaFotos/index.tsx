@@ -1,3 +1,4 @@
+import { SliceGaleriaFotos } from '@/components/SliceGaleriaFotos'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -9,14 +10,15 @@ export type GaleriaFotosProps = SliceComponentProps<Content.GaleriaFotosSlice>
 /**
  * Component for "GaleriaFotos" Slices.
  */
-const GaleriaFotos = ({ slice }: GaleriaFotosProps): JSX.Element => {
+const GaleriaFotos = (props: GaleriaFotosProps): JSX.Element => {
+  const { slice } = props
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for galeria_fotos (variation: {slice.variation})
-      Slices
+      <SliceGaleriaFotos {...props} />
     </section>
   )
 }

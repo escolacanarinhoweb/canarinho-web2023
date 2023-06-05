@@ -60,6 +60,10 @@ export const BallonImagine = ({ className }: Props) => {
           duration: 2
         })
     })
+
+    return () => {
+      ctx.revert()
+    }
   }, [])
 
   return (

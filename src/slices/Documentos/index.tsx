@@ -1,3 +1,4 @@
+import { SliceDocumentos } from '@/components/SliceDocumentos'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
@@ -9,13 +10,15 @@ export type DocumentosProps = SliceComponentProps<Content.DocumentosSlice>
 /**
  * Component for "Documentos" Slices.
  */
-const Documentos = ({ slice }: DocumentosProps): JSX.Element => {
+const Documentos = (props: DocumentosProps): JSX.Element => {
+  const { slice } = props
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for documentos (variation: {slice.variation}) Slices
+      <SliceDocumentos {...props} />
     </section>
   )
 }

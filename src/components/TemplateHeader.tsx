@@ -15,16 +15,19 @@ import { use, useEffect, useState } from 'react'
 import { ButtonTheme } from './ButtonTheme'
 import { Logo } from './Logo'
 import { useLocale } from 'next-intl'
+import { MenuSide, MenuSideProps } from './MenuSide'
 
 export interface TemplateHeaderProps {
   menu: {
     slices: SliceZone<MenuSubmenuSlice>
   }
+  button_language: boolean
   social: SliceZone<SocialSlice>
   text_registration: KeyTextField
   link_pre_registration: LinkField | null
   text_responsible_space: KeyTextField
   link_responsible_space: LinkField | null
+  menuSide: MenuSideProps
 }
 
 export const TemplateHeader = (props: TemplateHeaderProps) => {
@@ -72,7 +75,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
 
         <div className={ButtonsMobileBox}>
           <div className={ButtonLanguageBox}>
-            <ButtonLanguage />
+            {props.button_language && <ButtonLanguage />}
           </div>
 
           <div
@@ -104,8 +107,8 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
           </div>
 
           <div className={SettingsBox}>
-            <ButtonTheme />
-            <ButtonLanguage />
+            {/* <ButtonTheme /> */}
+            {props.button_language && <ButtonLanguage />}
           </div>
 
           <div className={SocialBox}>
@@ -148,6 +151,8 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
           </div>
         </div>
       </div>
+
+      <MenuSide {...props.menuSide} />
     </header>
   )
 }

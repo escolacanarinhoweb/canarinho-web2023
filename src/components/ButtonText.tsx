@@ -1,3 +1,5 @@
+import ButtonTextLineLeft from '@/svgs/ButtonTextLineLeft'
+import ButtonTextLineRight from '@/svgs/ButtonTextLineRight'
 import { KeyTextField } from '@prismicio/client'
 
 interface ButtonTextProps {
@@ -14,17 +16,21 @@ export const ButtonText = ({ text, color = 'blue' }: ButtonTextProps) => {
       ${color === 'orange' ? 'bg-orange-500 hover:bg-orange-600' : ''}
     `}
     >
-      <div className={`${TextBox}`}>{text}</div>
+      <div className={ContainerBox}>
+        <ButtonTextLineLeft className={`${LineLeft}`} />
+
+        <div className={`${TextBox}`}>{text}</div>
+
+        <ButtonTextLineRight className={`${LineRight}`} />
+      </div>
     </div>
   )
 }
 
 const Wrapper = `
   h-12
-  px-6
-  flex
-  items-center
-  justify-center
+  px-[6px]
+  inline-flex
   text-white
   font-serif
   xl:text-lg
@@ -37,4 +43,26 @@ const Wrapper = `
   duration-200
   cursor-pointer
 `
-const TextBox = ``
+const ContainerBox = `
+  h-12
+  flex
+  items-center
+  justify-center
+`
+const LineLeft = `
+  w-auto
+  h-[32px]
+  relative
+  top-[-2px]
+  opacity-90
+`
+const TextBox = `
+  px-4
+`
+const LineRight = `
+  w-auto
+  h-[32px]
+  relative
+  top-[2px]
+  opacity-90
+`
