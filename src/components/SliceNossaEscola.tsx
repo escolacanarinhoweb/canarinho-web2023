@@ -10,34 +10,36 @@ export const SliceNossaEscola = (props: NossaEscolaProps) => {
   return (
     <div className={Wrapper}>
       <div className={ContainerBox}>
-        <div className={ContentBox}>
-          <div className={TitleBox}>
-            <TitleArea title={props.slice.primary.title} />
+        <div className={GridBox}>
+          <div className={ContentBox}>
+            <div className={TitleBox}>
+              <TitleArea color="yellow" title={props.slice.primary.title} />
+            </div>
+
+            <div className={SubtitleBox}>
+              <SubtitleArea subtitle={props.slice.primary.subtitle} />
+            </div>
+
+            <div className={TextBox}>
+              <PrismicRichText field={props.slice.primary.text} />
+            </div>
+
+            <div className={LinkBox}>
+              <PrismicNextLink field={props.slice.primary.button_link}>
+                <ButtonText
+                  text={props.slice.primary.button_text}
+                  color="yellow"
+                />
+              </PrismicNextLink>
+            </div>
           </div>
 
-          <div className={SubtitleBox}>
-            <SubtitleArea subtitle={props.slice.primary.subtitle} />
+          <div className={FigureBox}>
+            <PrismicNextImage
+              className={ImageBox}
+              field={props.slice.primary.thumb}
+            />
           </div>
-
-          <div className={TextBox}>
-            <PrismicRichText field={props.slice.primary.text} />
-          </div>
-
-          <div className={LinkBox}>
-            <PrismicNextLink field={props.slice.primary.button_link}>
-              <ButtonText
-                text={props.slice.primary.button_text}
-                color="yellow"
-              />
-            </PrismicNextLink>
-          </div>
-        </div>
-
-        <div className={FigureBox}>
-          <PrismicNextImage
-            className={ImageBox}
-            field={props.slice.primary.thumb}
-          />
         </div>
       </div>
     </div>
@@ -49,11 +51,32 @@ const Wrapper = `
 `
 const ContainerBox = `
   ${ContainerSmall}
+`
+const GridBox = `
   grid
   grid-cols-[1fr_auto]
+  items-center
+  relative
+  after:rounded-tr-full
+  after:rounded-br-full
+  after:content-['']
+  after:w-[90%]
+  after:h-full
+  after:absolute
+  after:top-0
+  after:left-0
+  after:bg-white
+  after:drop-shadow-baseLeft
+  after:z-0
 `
 const ContentBox = `
-  max-w-[680px]
+  py-20
+  flex
+  flex-col
+  justify-center
+  items-center
+  relative
+  z-10
 `
 const TitleBox = `
   mb-2
@@ -65,6 +88,7 @@ const SubtitleBox = `
 `
 const TextBox = `
   mb-8
+  max-w-[680px]
 `
 const LinkBox = ``
 const FigureBox = `
@@ -74,6 +98,8 @@ const FigureBox = `
   rounded-full
   overflow-hidden
   shadow-2xl
+  relative
+  z-10
   after:content
   after:w-full
   after:h-full
@@ -82,7 +108,7 @@ const FigureBox = `
   after:left-0
   after:z-10
   after:bg-blue-500
-  after:opacity-50
+  after:opacity-90
   after:mix-blend-hard-light
 `
 const ImageBox = `

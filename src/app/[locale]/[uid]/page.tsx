@@ -26,6 +26,7 @@ export default async function Page({ params }: PageProps) {
   const header = {
     menu: navTop.data,
     social: navSocial.data.slices,
+    button_language: navTop.data.button_language,
     text_registration: navTop.data.text_registration,
     link_pre_registration: navTop.data.link_pre_registration,
     text_responsible_space: navTop.data.text_responsible_space,

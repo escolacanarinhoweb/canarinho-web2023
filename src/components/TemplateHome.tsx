@@ -83,8 +83,8 @@ const Block1 = `
   relative
 `
 const Ball = `
-  w-[100vw]
-  h-[100vw]
+  w-auto
+  h-[1500px]
   aspect-[1/1]
   top-[calc(100vh-60px)]
   left-1/2

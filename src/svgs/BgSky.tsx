@@ -1,6 +1,71 @@
-export default function IconBgSky() {
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+
+interface Props {
+  className?: string
+}
+
+export default function BgSky({ className }: Props) {
+  useEffect(() => {
+    const nuvem5 = document.getElementById('nuvem5')
+    const nuvem4 = document.getElementById('nuvem4')
+    const nuvem3 = document.getElementById('nuvem3')
+    const nuvem2 = document.getElementById('nuvem2')
+    const nuvem1 = document.getElementById('nuvem1')
+    const balao = document.getElementById('balao')
+    const aviao = document.getElementById('aviao')
+
+    if (!nuvem5 || !nuvem4 || !nuvem3 || !nuvem2 || !nuvem1 || !balao || !aviao)
+      return
+
+    const ctx = gsap.context(() => {
+      const handleMovimentVertical = (
+        element: HTMLElement,
+        y: number,
+        delay: number
+      ) => {
+        gsap.to(element, {
+          y,
+          duration: 1,
+          delay,
+          ease: 'power1.inOut',
+          repeat: -1,
+          yoyo: true
+        })
+      }
+
+      handleMovimentVertical(nuvem5, 10, 0)
+      handleMovimentVertical(nuvem4, 10, 0.5)
+      handleMovimentVertical(nuvem3, 10, 1)
+      handleMovimentVertical(nuvem2, 10, 1.5)
+      handleMovimentVertical(nuvem1, 10, 2)
+      handleMovimentVertical(balao, 20, 0)
+
+      const handleMovimentHorizontal = (element: HTMLElement) => {
+        gsap.fromTo(
+          element,
+          {
+            x: '100vh'
+          },
+          {
+            x: '-100vh',
+            duration: 5,
+            ease: 'none',
+            repeat: -1
+          }
+        )
+      }
+
+      handleMovimentHorizontal(aviao)
+    })
+
+    return () => {
+      ctx.revert()
+    }
+  }, [])
+
   return (
-    <svg viewBox="0 0 1439.7 1031.2">
+    <svg viewBox="0 0 1439.7 1031.2" className={className} fill="currentColor">
       <g id="nuvens">
         <g id="nuvem5">
           <defs>

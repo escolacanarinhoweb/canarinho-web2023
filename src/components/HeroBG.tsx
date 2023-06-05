@@ -62,12 +62,12 @@ const Object = `
   absolute
   top-20
   left-1/2
-  text-yellow-400
+  text-yellow-500
 `
 const Background = `
   heroBgAnimation
   h-screen
-  text-yellow-400
+  text-yellow-500
   relative
   left-1/2
   transform

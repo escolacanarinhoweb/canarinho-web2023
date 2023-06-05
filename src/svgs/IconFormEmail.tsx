@@ -1,11 +1,17 @@
-export const IconFormEmail = () => (
+interface Props {
+  className?: string
+}
+
+export const IconFormEmail = ({ className }: Props) => (
   <svg
+    className={className}
     version="1.1"
     id="Layer_1"
     x="0"
     y="0"
     viewBox="0 0 387.9 387.9"
     xmlSpace="preserve"
+    fill="currentColor"
   >
     <style></style>
     <circle

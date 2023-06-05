@@ -33,7 +33,6 @@ const Wrapper = `
   inline-flex
   text-white
   font-serif
-  xl:text-lg
   rounded-full
   shadow-lg
   transition

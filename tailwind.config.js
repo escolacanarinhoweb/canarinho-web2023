@@ -8,6 +8,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      dropShadow: {
+        base: '0 20px 10px rgba(0, 0, 0, 0.05)',
+        baseLeft: '20px 0px 10px rgba(0, 0, 0, 0.05)'
+      },
       screens: {
         lg: '1170px'
       },
@@ -67,7 +71,7 @@ module.exports = {
           900: '#80412A'
         },
         gray: {
-          25: '#f1f1f1',
+          25: '#F1F3F5',
           50: '#EAEEF4',
           100: '#D7DFE9',
           200: '#C3CFDE',

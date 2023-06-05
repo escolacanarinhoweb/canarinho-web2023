@@ -1,9 +1,13 @@
+import { KeyTextField } from '@prismicio/client'
 import dynamic from 'next/dynamic'
 
 interface Props {
-  latitude: number
-  longitude: number
-  zoom: string
+  markers?: {
+    latitude: number
+    longitude: number
+    title: string
+    content: string
+  }[]
 }
 
 export const MapContent = (props: Props) => {
@@ -20,5 +24,5 @@ export const MapContent = (props: Props) => {
 const Wrapper = `
   mapContent
   w-full
-  h-[300px]
+  h-[400px]
 `

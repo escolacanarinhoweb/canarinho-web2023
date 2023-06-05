@@ -13,7 +13,7 @@ export const SliceFotosInstagram = (props: FotosInstagramProps) => {
           <div className={ItemBox}>
             <div className={HeaderBox}>
               <div className={TitleBox}>
-                <TitleArea title={props.slice.primary.title} />
+                <TitleArea color="blue" title={props.slice.primary.title} />
               </div>
 
               <div className={SubtitleBox}>
@@ -28,8 +28,12 @@ export const SliceFotosInstagram = (props: FotosInstagramProps) => {
             </div>
           </div>
           {props.slice.items.map((item, index) => (
-            <div className={FigureBox} key={index}>
-              <PrismicNextImage className={ImageBox} field={item.photo} />
+            <div className={ItemBox} key={index}>
+              <div className={FigureBox}>
+                <PrismicNextLink field={props.slice.primary.button_link}>
+                  <PrismicNextImage className={ImageBox} field={item.photo} />
+                </PrismicNextLink>
+              </div>
             </div>
           ))}
         </div>
@@ -44,19 +48,30 @@ const Wrapper = `
 const ContainerBox = `
   ${ContainerSmall}
 `
-const HeaderBox = ``
+const HeaderBox = `
+  flex
+  flex-col
+  gap-4
+  mb-8
+  items-center
+  text-white
+`
 const TitleBox = ``
 const SubtitleBox = ``
 const ButtonBox = ``
 const GridBox = `
   grid
   grid-cols-3
+  grid-rows-2
   gap-4
 `
-const ItemBox = ``
+const ItemBox = `
+  fotoInstagram__item
+  h-[300px]
+`
 const FigureBox = `
   w-full
-  h-[300px]
+  h-full
   overflow-hidden
   rounded-md
   relative
@@ -70,9 +85,14 @@ const FigureBox = `
   after:bg-blue-500
   after:opacity-50
   after:mix-blend-hard-light
+  after:pointer-events-none
+  group
 `
 const ImageBox = `
   w-full
   h-full
   object-cover
+  group-hover:scale-105
+  transition-all
+  duration-500
 `

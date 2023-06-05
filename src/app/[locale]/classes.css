@@ -8,3 +8,17 @@
 .font-outline-4 {
   -webkit-text-stroke: 6px white;
 }
+
+.sliderDepoimento .swiper-slide {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+.sliderDepoimento .swiper-slide-active {
+  opacity: 1;
+}
+.fotoInstagram__item {
+  display: none;
+}
+.fotoInstagram__item:nth-child(-n + 6) {
+  display: block;
+}

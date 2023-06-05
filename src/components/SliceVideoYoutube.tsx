@@ -1,5 +1,5 @@
 import { VideoYoutubeProps } from '@/slices/VideoYoutube'
-import { ContainerSmall } from './Container'
+import { ContainerSmall, ContainerTiny } from './Container'
 import { useEffect, useState } from 'react'
 
 export const SliceVideoYoutube = (props: VideoYoutubeProps) => {
@@ -48,10 +48,11 @@ export const SliceVideoYoutube = (props: VideoYoutubeProps) => {
 }
 
 const Wrapper = `
-  py-20
+  pt-40
+  pb-20
 `
 const Container = `
-  ${ContainerSmall}
+  ${ContainerTiny}
 `
 const Video = `
   w-full

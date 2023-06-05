@@ -11,10 +11,11 @@ export default function Submarine({ className }: Props) {
 
     const ctx = gsap.context(() => {
       gsap.set(submarine, {
-        x: 100
+        x: 100,
+        scale: 0.7
       })
       gsap.to(submarine, {
-        rotate: 15,
+        rotate: 10,
         transformOrigin: '0% 100%',
         duration: 15,
         repeat: -1,
@@ -31,7 +32,7 @@ export default function Submarine({ className }: Props) {
   return (
     <svg
       viewBox="0 0 348.3 358.9"
-      className={className}
+      className={`${className}`}
       fill="currentColor"
       id="submarine"
     >

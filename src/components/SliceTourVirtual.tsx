@@ -12,7 +12,7 @@ export const SliceTourVirtual = (props: TourVirtualProps) => {
       <div className={ContainerBox}>
         <header className={HeaderBox}>
           <div className={TitleBox}>
-            <TitleArea title={props.slice.primary.title} />
+            <TitleArea color="orange" title={props.slice.primary.title} />
           </div>
 
           <div className={SubtitleBox}>
@@ -85,4 +85,7 @@ const ButtonBox = ``
 const FooterBox = `
   mt-12
 `
-const ImageBox = ``
+const ImageBox = `
+  w-[700px]
+  h-auto
+`

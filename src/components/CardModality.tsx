@@ -66,6 +66,7 @@ const Wrapper = `
   rounded-lg
   border
   border-gray-25
+  drop-shadow-base
 `
 const Container = `
   h-full

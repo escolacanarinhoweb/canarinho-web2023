@@ -40,6 +40,7 @@ const Wrapper = `
   right-0
   z-50
   bg-white
+  hidden
 `
 const ContainerBox = `
   px-4

@@ -6,10 +6,20 @@ import { TitleArea } from './TitleArea'
 import { ContainerSmall } from './Container'
 import { RiveLogo } from './RiveLogo'
 import { MapContent } from './MapContent'
+import { useEffect, useState } from 'react'
 
 export interface TemplateFooterProps extends FooterDocument {}
 
 export const TemplateFooter = (props: TemplateFooterProps) => {
+  const [markers, setMarkers] = useState<
+    {
+      latitude: number
+      longitude: number
+      title: string
+      content: string
+    }[]
+  >([])
+
   const {
     title_map,
     subtitle_map,
@@ -23,13 +33,36 @@ export const TemplateFooter = (props: TemplateFooterProps) => {
     localization_unity2,
     copyright
   } = props.data
+
+  useEffect(() => {
+    // @ts-ignore
+    setMarkers([
+      {
+        latitude: props.data.localization_unity1.latitude,
+        longitude: props.data.localization_unity1.longitude,
+        // @ts-ignore
+        title: props.data.title_unity1,
+        // @ts-ignore
+        content: props.data.info_unity1
+      },
+      {
+        latitude: props.data.localization_unity2.latitude,
+        longitude: props.data.localization_unity2.longitude,
+        // @ts-ignore
+        title: props.data.title_unity2,
+        // @ts-ignore
+        content: props.data.info_unity2
+      }
+    ])
+  }, [props.data])
+
   return (
     <div className={Wrapper}>
       <div className={ContainerBox}>
         <div className={Row1}>
           <div className={MapBox}>
             <div className={MapTitleBox}>
-              <TitleArea title={title_map} />
+              <TitleArea color="blue" title={title_map} />
             </div>
 
             <div className={MapSubtitleBox}>
@@ -37,17 +70,13 @@ export const TemplateFooter = (props: TemplateFooterProps) => {
             </div>
 
             <div className={MapContentBox}>
-              <MapContent
-                latitude={localization_unity1.latitude}
-                longitude={localization_unity1.longitude}
-                zoom={'12'}
-              />
+              <MapContent markers={markers} />
             </div>
           </div>
 
           <div className={FormBox}>
             <div className={FormTitleBox}>
-              <TitleArea title={title_form} />
+              <TitleArea color="blue" title={title_form} />
             </div>
 
             <div className={FormSubtitleBox}>
@@ -88,28 +117,59 @@ export const TemplateFooter = (props: TemplateFooterProps) => {
   )
 }
 
-const Wrapper = ``
+const Wrapper = `
+  text-white
+`
 const ContainerBox = `
   ${ContainerSmall}
 `
 const Row1 = `
   grid
   grid-cols-2
+  gap-8
 `
-const MapBox = ``
-const MapTitleBox = ``
-const MapSubtitleBox = ``
-const MapContentBox = ``
+const MapBox = `
+`
+const MapTitleBox = `
+  mb-2
+`
+const MapSubtitleBox = `
+  mb-4
+`
+const MapContentBox = `
+  h-[400px]
+  rounded-md
+  overflow-hidden
+`
 const FormBox = ``
-const FormTitleBox = ``
-const FormSubtitleBox = ``
+const FormTitleBox = `
+  mb-2
+`
+const FormSubtitleBox = `
+  mb-4
+`
 const FormContentBox = ``
 const Row2 = `
+  pt-12
   grid
-  grid-cols-3
+  grid-cols-[1fr_1fr_auto]
+  text-yellow-900
+  items-center
 `
 const UnityBox = ``
-const UnityTitleBox = ``
+const UnityTitleBox = `
+  mb-2
+  font-serif
+  text-blue-500
+  text-lg
+`
 const UnityInfoBox = ``
-const LogoBox = ``
-const CopyBox = ``
+const LogoBox = `
+  w-48
+`
+const CopyBox = `
+text-yellow-900
+
+  py-12
+  text-center
+`
