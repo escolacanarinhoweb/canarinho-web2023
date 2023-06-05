@@ -5,6 +5,8 @@ import { ContainerSmall } from './Container'
 import { TitleArea } from './TitleArea'
 import { ButtonText } from './ButtonText'
 import { SubtitleArea } from './SubtitleArea'
+import { RivePlane } from './RivePlane'
+import { RiveSpinning } from './RiveSpinning'
 
 export const SliceNossaEscola = (props: NossaEscolaProps) => {
   return (
@@ -12,6 +14,13 @@ export const SliceNossaEscola = (props: NossaEscolaProps) => {
       <div className={ContainerBox}>
         <div className={GridBox}>
           <div className={ContentBox}>
+            <div className={PlaneBox}>
+              <RivePlane />
+            </div>
+
+            <div className={SpinningBox}>
+              <RiveSpinning />
+            </div>
             <div className={TitleBox}>
               <TitleArea color="yellow" title={props.slice.primary.title} />
             </div>
@@ -77,6 +86,20 @@ const ContentBox = `
   items-center
   relative
   z-10
+`
+const PlaneBox = `
+  w-[200px]
+  h-[200px]
+  absolute
+  top-0
+  left-0
+`
+const SpinningBox = `
+  w-[200px]
+  h-[200px]
+  absolute
+  -bottom-8
+  right-0
 `
 const TitleBox = `
   mb-2

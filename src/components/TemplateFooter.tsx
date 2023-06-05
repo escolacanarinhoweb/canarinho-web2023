@@ -153,7 +153,6 @@ const Row2 = `
   pt-12
   grid
   grid-cols-[1fr_1fr_auto]
-  text-yellow-900
   items-center
 `
 const UnityBox = ``
@@ -168,7 +167,6 @@ const LogoBox = `
   w-48
 `
 const CopyBox = `
-text-yellow-900
 
   py-12
   text-center

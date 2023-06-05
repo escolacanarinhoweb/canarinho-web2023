@@ -21,7 +21,7 @@ export const ContainerSmall = `
 export const ContainerTiny = `
   container
   w-full
-  max-w-[920px]
+  max-w-[1170px]
   h-full
   mx-auto
   px-4

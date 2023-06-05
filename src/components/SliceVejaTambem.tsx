@@ -14,7 +14,9 @@ export const SliceVejaTambem = (props: VejaTambemProps) => {
         <div className={ListBox}>
           {props.slice.items.map((item, index) => (
             <div className={ItemBox} key={index}>
-              <PrismicNextLink field={item.link}>{item.name}</PrismicNextLink>
+              <PrismicNextLink className={LinkBox} field={item.link}>
+                {item.name}
+              </PrismicNextLink>
             </div>
           ))}
         </div>
@@ -23,10 +25,25 @@ export const SliceVejaTambem = (props: VejaTambemProps) => {
   )
 }
 
-const Wrapper = ``
-const ContainerBox = ``
+const Wrapper = `
+  shadow-md
+  border
+  border-gray-50
+  rounded-xl
+`
+const ContainerBox = `
+  px-12
+  py-8
+`
 const HeaderBox = ``
-const TitleBox = ``
+const TitleBox = `
+  font-serif
+  text-orange-500
+  text-lg
+  mb-4
+`
 const ListBox = ``
 const ItemBox = ``
-const LinkBox = ``
+const LinkBox = `
+  hover:text-orange-500
+`

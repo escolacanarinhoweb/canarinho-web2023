@@ -1,21 +1,11 @@
 'use client'
 
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
-import { useEffect, useState } from 'react'
+import Rive from '@rive-app/react-canvas'
 
-export const RivePlane = () => {
-  const [srcRive, setSrcRive] = useState('/rives/spinning.riv')
-  const [stateMachine, setStateMachine] = useState('StateIdle')
-
-  const { rive, RiveComponent: RiveComponentTouch } = useRive({
-    src: srcRive,
-    autoplay: true,
-    stateMachines: stateMachine
-  })
-
+export const RiveSpinning = () => {
   return (
     <div className={Wrapper}>
-      <RiveComponentTouch className={RiveBox} />
+      <Rive src="/rives/spinning.riv" className={RiveBox} />
     </div>
   )
 }

@@ -220,7 +220,7 @@ export const FormContact = () => {
                   : 'text-yellow-900  translate-y-[0]'
               }`}
             >
-              Mesagem
+              Mensagem
             </label>
             <textarea
               className={TextArea}

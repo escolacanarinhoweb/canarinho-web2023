@@ -22,3 +22,11 @@
 .fotoInstagram__item:nth-child(-n + 6) {
   display: block;
 }
+
+.textLong p {
+  margin-bottom: 1rem;
+}
+
+.textLong p:last-child {
+  margin-bottom: 0;
+}

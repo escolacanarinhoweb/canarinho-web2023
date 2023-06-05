@@ -28,10 +28,23 @@ export const SliceGaleriaFotos = (props: GaleriaFotosProps) => {
   )
 }
 
-const Wrapper = ``
+const Wrapper = `
+  py-12
+`
 const ContainerBox = ``
-const HeaderBox = ``
-const TitleBox = ``
-const DescriptionBox = ``
+const HeaderBox = `
+`
+const TitleBox = `
+  mb-4
+  text-3xl
+  font-serif
+  text-orange-500
+  text-center
+`
+const DescriptionBox = `
+  mb-12
+  max-w-[680px]
+  mx-auto
+`
 const BodyBox = ``
 const SliderBox = ``

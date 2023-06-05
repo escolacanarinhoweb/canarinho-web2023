@@ -107,7 +107,7 @@ export const SliceBannerHome = (props: BannerHomeProps) => {
       </svg>
 
       <div className={Title} ref={titleRef}>
-        <TitleHero title="Seja um Canarinho" />
+        <TitleHero title={props.slice.primary.title} />
       </div>
     </div>
   )

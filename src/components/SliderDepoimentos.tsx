@@ -77,11 +77,11 @@ export const SliderDepoimentos = ({ items }: SliderDepoimentosProps) => {
 const Wrapper = `
 `
 const Slider = `
-  pb-12
+  pb-20
   sliderDepoimento
 `
 const SliderTrack = `
-  pb-12
+  pb-20
 `
 const Slide = ``
 const SlideContent = `
@@ -108,7 +108,7 @@ const ButtonPrev = `
   justify-center
   absolute
   left-1/2
-  bottom-[0px]
+  bottom-[18px]
   z-50
   transform
   -translate-x-[120%]
@@ -125,7 +125,7 @@ const ButtonNext = `
   justify-center
   absolute
   right-1/2
-  bottom-[0px]
+  bottom-[18px]
   z-50
   translate-x-[120%]
   after:hidden

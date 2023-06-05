@@ -1,5 +1,7 @@
+import { KeyTextField } from '@prismicio/client'
+
 interface TitleHeroProps {
-  title: string
+  title: string | KeyTextField
 }
 
 export const TitleHero = ({ title }: TitleHeroProps) => {
