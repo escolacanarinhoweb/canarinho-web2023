@@ -72,6 +72,7 @@ export const BallonImagine = ({ className }: Props) => {
       viewBox="0 0 1907 1080"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
     >
       <path
         ref={pathRef}

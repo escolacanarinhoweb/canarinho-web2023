@@ -98,7 +98,7 @@ const SpinningBox = `
   w-[200px]
   h-[200px]
   absolute
-  -bottom-8
+  -bottom-[29px]
   right-0
 `
 const TitleBox = `

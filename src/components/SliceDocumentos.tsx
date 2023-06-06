@@ -9,7 +9,11 @@ export const SliceDocumentos = (props: DocumentosProps) => {
           {props.slice.items.map((item, index) => {
             return (
               <li className={ItemBox} key={index}>
-                <PrismicNextLink className={LinkBox} field={item.document}>
+                <PrismicNextLink
+                  className={LinkBox}
+                  field={item.document}
+                  target="_blank"
+                >
                   <span className={NameBox}>{item.name}</span>
                   <span className={ButtonBox}>
                     <svg

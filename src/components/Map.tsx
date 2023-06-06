@@ -45,7 +45,7 @@ const Map = (props: MapProps) => {
           title={marker.title}
           icon={MarkerIcon}
         >
-          <Popup>{marker.content}</Popup>
+          <Popup>{marker.title}</Popup>
         </Marker>
       ))}
     </MapContainer>
