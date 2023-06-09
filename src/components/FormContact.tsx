@@ -252,7 +252,7 @@ const Wrapper = `
 const FormBox = ``
 const Row1 = `
   grid
-  grid-cols-2
+  lg:grid-cols-2
   gap-4
 `
 const Row2 = `

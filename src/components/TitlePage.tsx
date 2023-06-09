@@ -9,7 +9,8 @@ export const TitlePage = ({ title }: TitlePageProps) => {
 }
 
 const Wrapper = `
-  text-6xl
+  text-4xl
+  lg:text-6xl
   font-serif
   text-center
   text-blue-500

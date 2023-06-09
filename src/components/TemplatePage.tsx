@@ -182,7 +182,7 @@ const PageBody = `
 const PageContent = `
   py-16
   grid
-  grid-cols-[1fr_auto]
+  lg:grid-cols-[1fr_auto]
   items-start
   justify-center
 `
@@ -191,5 +191,7 @@ const PageText = `
   max-w-[680px]
   mx-auto
 `
-const PageSideBar = ``
+const PageSideBar = `
+  pt-12
+`
 const PageSlices = ``

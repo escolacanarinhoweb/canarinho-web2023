@@ -91,7 +91,7 @@ const SubMenuList = `
   lg:text-blue-500
   lg:bg-white
   lg:rounded-lg
-  shadow-lg
+  lg:shadow-lg
 `
 const SubItem = `
   text-base

@@ -65,7 +65,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
       >
         <div
           className={`${LogoBox} ${
-            isScrolling ? '-translate-y-12' : 'translate-y-0'
+            isScrolling ? '-translate-y-4 lg:-translate-y-12' : 'translate-y-0'
           }`}
         >
           <Link href="/" locale={locale} className={LogoContentBox}>
@@ -100,7 +100,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
         >
           <div
             className={`${MenuListBox} ${
-              isScrolling ? 'text-blue-500' : 'text-white'
+              isScrolling ? 'text-blue-500' : 'lg:text-white'
             }`}
           >
             <MenuList slices={props.menu.slices} />
@@ -161,7 +161,8 @@ const Wrapper = `
   headerTemplate
   w-full
   fixed
-  z-50
+  z-[2000]
+  lg:z-50
 `
 const ContainerBox = `
   ${Container}
@@ -263,6 +264,9 @@ const SocialIconBox = `
 `
 const ButtonsBox = `
   flex
+  flex-col
+  lg:flex-row
+  items-center
   gap-4
 `
 const ButtonBox = `

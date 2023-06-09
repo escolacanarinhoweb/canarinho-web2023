@@ -160,6 +160,8 @@ const Wrapper = `
   bg-white
   rounded-xl
   shadow-xl
+  hidden
+  lg:block
 `
 const ContainerBox = `
   relative

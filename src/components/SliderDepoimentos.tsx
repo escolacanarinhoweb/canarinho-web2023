@@ -23,7 +23,7 @@ export const SliderDepoimentos = ({ items }: SliderDepoimentosProps) => {
         className={Slider}
         wrapperClass={SliderTrack}
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={1}
         modules={[Navigation]}
         navigation={{
           prevEl: prevRef.current,
@@ -34,6 +34,11 @@ export const SliderDepoimentos = ({ items }: SliderDepoimentosProps) => {
           swiper.params.navigation.prevEl = prevRef.current
           // @ts-ignore
           swiper.params.navigation.nextEl = nextRef.current
+        }}
+        breakpoints={{
+          1170: {
+            slidesPerView: 3
+          }
         }}
       >
         {items.map((item, index) => (
@@ -77,11 +82,11 @@ export const SliderDepoimentos = ({ items }: SliderDepoimentosProps) => {
 const Wrapper = `
 `
 const Slider = `
-  pb-20
+  lg:pb-20
   sliderDepoimento
 `
 const SliderTrack = `
-  pb-20
+  lg:pb-20
 `
 const Slide = ``
 const SlideContent = `

@@ -86,13 +86,15 @@ const Wrapper = `
   homePage
 `
 const Main = `
+  overflow-hidden
 `
 const Block1 = `
   relative
 `
 const Ball = `
   w-auto
-  h-[1500px]
+  h-[2630px]
+  lg:h-[1500px]
   aspect-[1/1]
   top-[calc(100vh-60px)]
   left-1/2

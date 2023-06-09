@@ -36,8 +36,10 @@ const ContainerBox = `
   ${ContainerSmall}
 `
 const ListBox = `
-  grid
-  grid-cols-3
+  flex
+  flex-col
+  lg:grid
+  lg:grid-cols-3
   gap-6
 `
 const ItemBox = ``

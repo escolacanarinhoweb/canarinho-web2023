@@ -60,14 +60,17 @@ const TitleBox = ``
 const SubtitleBox = ``
 const ButtonBox = ``
 const GridBox = `
-  grid
-  grid-cols-3
-  grid-rows-2
+  flex
+  flex-col
+  lg:grid
+  lg:grid-cols-3
+  lg:grid-rows-2
   gap-4
 `
 const ItemBox = `
   fotoInstagram__item
-  h-[300px]
+  h-[200px]
+  lg:h-[300px]
 `
 const FigureBox = `
   w-full

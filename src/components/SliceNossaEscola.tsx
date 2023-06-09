@@ -62,21 +62,23 @@ const ContainerBox = `
   ${ContainerSmall}
 `
 const GridBox = `
-  grid
-  grid-cols-[1fr_auto]
+  flex
+  flex-col
+  lg:grid
+  lg:grid-cols-[1fr_auto]
   items-center
   relative
-  after:rounded-tr-full
-  after:rounded-br-full
-  after:content-['']
-  after:w-[90%]
-  after:h-full
-  after:absolute
-  after:top-0
-  after:left-0
-  after:bg-white
-  after:drop-shadow-baseLeft
-  after:z-0
+  lg:after:rounded-tr-full
+  lg:after:rounded-br-full
+  lg:after:content-['']
+  lg:after:w-[90%]
+  lg:after:h-full
+  lg:after:absolute
+  lg:after:top-0
+  lg:after:left-0
+  lg:after:bg-white
+  lg:after:drop-shadow-baseLeft
+  lg:after:z-0
 `
 const ContentBox = `
   py-20
@@ -91,14 +93,16 @@ const PlaneBox = `
   w-[200px]
   h-[200px]
   absolute
-  top-0
+  -top-12
+  lg:top-0
   left-0
 `
 const SpinningBox = `
   w-[200px]
   h-[200px]
   absolute
-  -bottom-[29px]
+  -bottom-[80px]
+  lg:-bottom-[29px]
   right-0
 `
 const TitleBox = `
@@ -115,6 +119,8 @@ const TextBox = `
 `
 const LinkBox = ``
 const FigureBox = `
+  order-first
+  lg:order-last
   w-[300px]
   h-[300px]
   relative

@@ -20,7 +20,7 @@ export const SliderGaleriaFotos = ({ items }: SliderGaleriaFotosProps) => {
         className={Slider}
         wrapperClass={SliderTrack}
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={1}
         modules={[Navigation]}
         navigation={{
           prevEl: prevRef.current,
@@ -31,6 +31,11 @@ export const SliderGaleriaFotos = ({ items }: SliderGaleriaFotosProps) => {
           swiper.params.navigation.prevEl = prevRef.current
           // @ts-ignore
           swiper.params.navigation.nextEl = nextRef.current
+        }}
+        breakpoints={{
+          1170: {
+            slidesPerView: 3
+          }
         }}
       >
         {items.map((item, index) => (

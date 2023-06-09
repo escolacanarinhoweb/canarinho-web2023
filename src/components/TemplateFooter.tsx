@@ -124,8 +124,10 @@ const ContainerBox = `
   ${ContainerSmall}
 `
 const Row1 = `
-  grid
-  grid-cols-2
+  flex
+  flex-col
+  lg:grid
+  lg:grid-cols-2
   gap-8
 `
 const MapBox = `
@@ -151,9 +153,12 @@ const FormSubtitleBox = `
 const FormContentBox = ``
 const Row2 = `
   pt-12
-  grid
-  grid-cols-[1fr_1fr_auto]
+  flex
+  flex-col
+  lg:grid
+  lg:grid-cols-[1fr_1fr_auto]
   items-center
+  gap-8
 `
 const UnityBox = ``
 const UnityTitleBox = `
