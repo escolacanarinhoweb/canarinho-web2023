@@ -30,3 +30,17 @@
 .textLong p:last-child {
   margin-bottom: 0;
 }
+
+.textLong a {
+  color: #60b5e4;
+  text-decoration: underline;
+}
+
+.textLong a:hover {
+  color: #f7875f;
+  text-decoration: none;
+}
+
+.textLong strong {
+  font-weight: 700;
+}

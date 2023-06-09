@@ -11,6 +11,8 @@ import VideoYoutube from '@/slices/VideoYoutube'
 import Depoimentos from '@/slices/Depoimentos'
 import FotosInstagram from '@/slices/FotosInstagram'
 import { TemplateFooter, TemplateFooterProps } from './TemplateFooter'
+import { useMenu } from '@/hooks/UseMenu'
+import { useEffect } from 'react'
 
 interface TemplateHomeProps {
   header: TemplateHeaderProps
@@ -21,6 +23,12 @@ interface TemplateHomeProps {
 }
 
 export const TemplateHome = (props: TemplateHomeProps) => {
+  const { setSideMenuInitialIsOpen } = useMenu()
+
+  useEffect(() => {
+    setSideMenuInitialIsOpen!(true)
+  }, [setSideMenuInitialIsOpen])
+
   return (
     <div className={Wrapper}>
       <TemplateHeader {...props.header} />

@@ -11,7 +11,12 @@ type Callback = (self: ScrollSmoother) => any
 type EventCallback = (self: ScrollSmoother, event: Event) => any
 type EffectFunc = (index: number, element: Element) => number | string
 
-export const SmootherContext = createContext({} as any | null)
+export interface ScrollSmootherOptions {
+  smoother?: ScrollSmoother
+  setSmoother?: (smoother: ScrollSmoother) => void
+}
+
+export const SmootherContext = createContext({} as ScrollSmootherOptions)
 
 export const SmootherProvider = ({
   children,
@@ -20,8 +25,8 @@ export const SmootherProvider = ({
   children: React.ReactNode
 }) => {
   const [smoother, setSmoother] = useState<any | null>(null)
-  const { isOpen, setIsOpen } = useMenu()
-  const { modalIsOpen, setModalIsOpen } = useModal()
+  const { isOpen } = useMenu()
+  const { modalIsOpen } = useModal()
 
   useEffect(() => {
     ScrollTrigger.clearScrollMemory()
@@ -59,6 +64,46 @@ export const SmootherProvider = ({
       smoother && smoother.paused(false)
     }
   }, [isOpen, smoother, modalIsOpen])
+
+  useEffect(() => {
+    const linksContact = document.querySelectorAll('a[href="https://#contato"]')
+
+    if (!linksContact) return
+
+    linksContact.forEach((link) => {
+      const newLinkContact = document.createElement('span')
+      newLinkContact.innerHTML = link.innerHTML
+
+      newLinkContact.style.cursor = 'pointer'
+      newLinkContact.classList.add('link-contact')
+      link.parentNode?.replaceChild(newLinkContact, link)
+    })
+
+    return () => {
+      linksContact.forEach((link) => {
+        const newLinkContact = document.createElement('a')
+        newLinkContact.innerHTML = link.innerHTML
+
+        newLinkContact.href = 'https://#contato'
+        newLinkContact.classList.add('link-contact')
+        link.parentNode?.replaceChild(newLinkContact, link)
+      })
+    }
+  }, [smoother])
+
+  useEffect(() => {
+    const contactLinks = document.querySelectorAll('.link-contact')
+    const elementScroll = document.getElementById('contato')?.offsetTop
+    const numberScroll = elementScroll && elementScroll - 100
+
+    if (!contactLinks) return
+
+    contactLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        smoother && smoother.scrollTo(numberScroll, true)
+      })
+    })
+  }, [smoother])
 
   return (
     <SmootherContext.Provider value={smoother}>

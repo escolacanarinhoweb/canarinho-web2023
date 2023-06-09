@@ -57,7 +57,7 @@ export const TemplateFooter = (props: TemplateFooterProps) => {
   }, [props.data])
 
   return (
-    <div className={Wrapper}>
+    <div className={Wrapper} id="contato">
       <div className={ContainerBox}>
         <div className={Row1}>
           <div className={MapBox}>

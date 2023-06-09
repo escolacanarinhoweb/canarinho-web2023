@@ -1455,6 +1455,36 @@ export type TourVirtualSlice = prismic.SharedSlice<
   TourVirtualSliceVariation
 >
 /**
+ * Default variation for TrabalheConosco Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TrabalheConoscoSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  never
+>
+/**
+ * Slice variation for *TrabalheConosco*
+ *
+ */
+type TrabalheConoscoSliceVariation = TrabalheConoscoSliceDefault
+/**
+ * TrabalheConosco Shared Slice
+ *
+ * - **API ID**: `trabalhe_conosco`
+ * - **Description**: `TrabalheConosco`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TrabalheConoscoSlice = prismic.SharedSlice<
+  'trabalhe_conosco',
+  TrabalheConoscoSliceVariation
+>
+/**
  * Primary content in VejaTambem → Primary
  *
  */
@@ -1650,6 +1680,9 @@ declare module '@prismicio/client' {
       TourVirtualSliceDefault,
       TourVirtualSliceVariation,
       TourVirtualSlice,
+      TrabalheConoscoSliceDefault,
+      TrabalheConoscoSliceVariation,
+      TrabalheConoscoSlice,
       VejaTambemSliceDefaultPrimary,
       VejaTambemSliceDefaultItem,
       VejaTambemSliceDefault,

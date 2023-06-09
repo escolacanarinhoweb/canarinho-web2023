@@ -8,6 +8,7 @@ import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import { PrismicRichText } from '@prismicio/react'
 import React from 'react'
 import { ButtonIcon } from './ButtonIcon'
+import { useLocale } from 'next-intl'
 
 interface CardModalityProps {
   icon: ImageField<never>
@@ -19,6 +20,8 @@ interface CardModalityProps {
 }
 
 export const CardModality = (props: CardModalityProps) => {
+  const locale = useLocale()
+
   return (
     <div className={Wrapper}>
       <div className={Container}>
@@ -53,7 +56,7 @@ export const CardModality = (props: CardModalityProps) => {
         </div>
 
         <PrismicNextLink className={LinkBox} field={props.link}>
-          Mais Informações
+          {locale === 'en-gb' ? 'Learn more' : 'Saiba mais'}
           <ButtonIcon color={props.color} />
         </PrismicNextLink>
       </div>

@@ -87,7 +87,7 @@ export const SliceBannerHome = (props: BannerHomeProps) => {
   }, [])
 
   return (
-    <div className={Wrapper} ref={wrapperRef}>
+    <div className={Wrapper} ref={wrapperRef} id="zarkan">
       <div className={Background} ref={bgRef}>
         <HeroBG char={character} />
       </div>

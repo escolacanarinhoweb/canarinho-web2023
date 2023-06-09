@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { ButtonText } from './ButtonText'
 import { IconFormEmail } from '@/svgs/IconFormEmail'
 import { IconFormName } from '@/svgs/IconFormName'
-import { log } from 'console'
+import { useLocale } from 'next-intl'
 
 export const FormContact = () => {
+  const locale = useLocale()
+
   const [nameFocus, setNameFocus] = useState(false)
   const [emailFocus, setEmailFocus] = useState(false)
   const [subjectFocus, setSubjectFocus] = useState(false)
@@ -125,7 +127,7 @@ export const FormContact = () => {
                   : 'text-yellow-900  translate-y-[0]'
               }`}
             >
-              Nome
+              {locale === 'en-gb' ? 'Name' : 'Nome'}
             </label>
             <input
               className={InputBox}
@@ -159,7 +161,7 @@ export const FormContact = () => {
                   : 'text-yellow-900  translate-y-[0]'
               }`}
             >
-              E-mail
+              {locale === 'en-gb' ? 'Email' : 'E-mail'}
             </label>
             <input
               className={InputBox}
@@ -195,7 +197,7 @@ export const FormContact = () => {
                   : 'text-yellow-900  translate-y-[0]'
               }`}
             >
-              Assunto
+              {locale === 'en-gb' ? 'Subject' : 'Assunto'}
             </label>
             <input
               className={InputBox}
@@ -220,7 +222,7 @@ export const FormContact = () => {
                   : 'text-yellow-900  translate-y-[0]'
               }`}
             >
-              Mensagem
+              {locale === 'en-gb' ? 'Message' : 'Mensagem'}
             </label>
             <textarea
               className={TextArea}

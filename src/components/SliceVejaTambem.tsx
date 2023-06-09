@@ -42,7 +42,11 @@ const TitleBox = `
   text-lg
   mb-4
 `
-const ListBox = ``
+const ListBox = `
+  flex
+  flex-col
+  gap-4
+`
 const ItemBox = ``
 const LinkBox = `
   hover:text-orange-500

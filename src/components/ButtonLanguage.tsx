@@ -57,7 +57,7 @@ export const ButtonLanguage = () => {
         {currentLocale === 'pt-br' ? (
           <Image
             className={OptionIcon}
-            src="/images/iconFlagGB.svg"
+            src="/images/IconFlagGB.png"
             width={400}
             height={400}
             alt="Bandeira da inglaterra"
@@ -66,7 +66,7 @@ export const ButtonLanguage = () => {
         ) : (
           <Image
             className={OptionIcon}
-            src="/images/iconFlagBR.svg"
+            src="/images/IconFlagBR.png"
             width={400}
             height={400}
             alt="Bandeira do Brasil"

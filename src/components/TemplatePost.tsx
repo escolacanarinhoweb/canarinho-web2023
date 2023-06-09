@@ -6,7 +6,7 @@ import { KeyTextField } from '@prismicio/client'
 import { TemplateFooter, TemplateFooterProps } from './TemplateFooter'
 import { PrismicRichText, SliceZone } from '@prismicio/react'
 import { ContainerSmall, ContainerTiny } from './Container'
-import { PageDocument } from '../../prismicio-types'
+import { BlogDocument, PageDocument } from '../../prismicio-types'
 import { PrismicNextImage } from '@prismicio/next'
 import { TitlePage } from './TitlePage'
 import TourVirtual from '@/slices/TourVirtual'
@@ -15,22 +15,14 @@ import GaleriaFotos from '@/slices/GaleriaFotos'
 import VejaTambem from '@/slices/VejaTambem'
 import VideoYoutube from '@/slices/VideoYoutube'
 import { BGPageTop } from '@/svgs/BGPageTop'
-import { useMenu } from '@/hooks/UseMenu'
-import { useEffect } from 'react'
 
-interface TemplatePageProps {
+interface TemplatePostProps {
   header: TemplateHeaderProps
-  page: PageDocument
+  post: BlogDocument
   footer: TemplateFooterProps
 }
 
-export const TemplatePage = (props: TemplatePageProps) => {
-  const { setSideMenuInitialIsOpen } = useMenu()
-
-  useEffect(() => {
-    setSideMenuInitialIsOpen!(false)
-  }, [setSideMenuInitialIsOpen])
-
+export const TemplatePost = (props: TemplatePostProps) => {
   return (
     <div className={Wrapper}>
       <TemplateHeader {...props.header} />
@@ -43,11 +35,11 @@ export const TemplatePage = (props: TemplatePageProps) => {
 
             <div className={PageContainer}>
               <header className={PageHeader}>
-                {props.page.data.image.url && (
+                {props.post.data.image.url && (
                   <div className={PageFigure}>
                     <PrismicNextImage
                       className={PageImage}
-                      field={props.page.data.image}
+                      field={props.post.data.image}
                       priority
                     />
                   </div>
@@ -55,24 +47,24 @@ export const TemplatePage = (props: TemplatePageProps) => {
 
                 <div
                   className={`${PageTitle} ${
-                    props.page.data.image.url ? '' : 'pt-32'
+                    props.post.data.image.url ? '' : 'pt-32'
                   }`}
                 >
-                  <TitlePage title={props.page.data.title as KeyTextField} />
+                  {props.post.data.title}
                 </div>
               </header>
 
               <div className={PageBody}>
                 <div className={PageContent}>
                   <div className={PageText}>
-                    {props.page.data.texto && (
-                      <PrismicRichText field={props.page.data.texto} />
+                    {props.post.data.text && (
+                      <PrismicRichText field={props.post.data.text} />
                     )}
                   </div>
 
                   <div className={PageSideBar}>
                     <SliceZone
-                      slices={props.page.data.slices}
+                      slices={props.post.data.slices}
                       components={{
                         veja_tambem: VejaTambem
                       }}
@@ -82,7 +74,7 @@ export const TemplatePage = (props: TemplatePageProps) => {
 
                 <div className={PageSlices}>
                   <SliceZone
-                    slices={props.page.data.slices}
+                    slices={props.post.data.slices}
                     components={{
                       tour_virtual: TourVirtual,
                       documentos: Documentos,
@@ -176,7 +168,15 @@ const PageImage = `
   object-cover
   bg-gray-50
 `
-const PageTitle = ``
+const PageTitle = `
+  text-4xl
+  text-center
+  font-serif
+  max-w-[680px]
+  mx-auto
+  text-blue-500
+
+`
 const PageBody = `
 `
 const PageContent = `
@@ -191,5 +191,7 @@ const PageText = `
   max-w-[680px]
   mx-auto
 `
-const PageSideBar = ``
+const PageSideBar = `
+  max-w-[300px]
+`
 const PageSlices = ``

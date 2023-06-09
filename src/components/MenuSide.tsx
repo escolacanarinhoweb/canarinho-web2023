@@ -2,14 +2,20 @@ import { useEffect, useState, useRef } from 'react'
 import { NavSideDocument } from '../../prismicio-types'
 import { PrismicNextLink } from '@prismicio/next'
 import { gsap } from 'gsap'
+import { useMenu } from '@/hooks/UseMenu'
 
 export interface MenuSideProps extends NavSideDocument {}
 
 export const MenuSide = (props: MenuSideProps) => {
+  const { sideMenuInitialIsOpen, setSideMenuInitialIsOpen } = useMenu()
   const wrapperRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [wrapperHeight, setWrapperHeight] = useState(0)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
+
+  useEffect(() => {
+    setIsOpen(sideMenuInitialIsOpen!)
+  }, [sideMenuInitialIsOpen])
 
   useEffect(() => {
     const wrapper = wrapperRef.current
@@ -21,9 +27,14 @@ export const MenuSide = (props: MenuSideProps) => {
 
   useEffect(() => {
     // if scrolling isopen is false
+
     const handleScroll = () => {
-      if (window.scrollY < 50) setIsOpen(false)
-      else setIsOpen(true)
+      if (window.scrollY < 50) {
+        if (!sideMenuInitialIsOpen) return
+        setIsOpen(true)
+      } else if (window.scrollY > 50) {
+        setIsOpen(false)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -31,7 +42,7 @@ export const MenuSide = (props: MenuSideProps) => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [sideMenuInitialIsOpen])
 
   useEffect(() => {
     const wrapper = wrapperRef.current
@@ -46,12 +57,16 @@ export const MenuSide = (props: MenuSideProps) => {
       }
     })
 
-    if (isOpen) {
+    if (!isOpen) {
       tl.to(wrapper, { height: 50 })
       tl.to(container, { paddingTop: 12 }, '-=0.5')
-      tl.to(wrapper, { width: 180 })
-    } else {
+      tl.to(wrapper, { width: 140 })
+      tl.to(container, { paddingLeft: 12 }, '-=0.5')
+      tl.to(wrapper, { x: 16 })
+    } else if (isOpen) {
+      tl.to(wrapper, { x: 0 })
       tl.to(wrapper, { width: 260 })
+      tl.to(container, { paddingLeft: 32 }, '-=0.5')
       tl.to(container, { paddingTop: 32 })
       tl.to(wrapper, { height: wrapperHeight }, '-=0.5')
     }
@@ -61,18 +76,34 @@ export const MenuSide = (props: MenuSideProps) => {
     }
   }, [isOpen, wrapperHeight])
 
+  useEffect(() => {
+    const blogLinks = document.querySelectorAll('a[href="https://#blog"]')
+
+    if (!blogLinks) return
+
+    blogLinks.forEach((link) => {
+      const newLinkContact = document.createElement('a')
+      newLinkContact.innerHTML = link.innerHTML
+
+      newLinkContact.style.cursor = 'pointer'
+      newLinkContact.setAttribute('href', '/blog')
+      newLinkContact.classList.add('link-blog')
+      link.parentNode?.replaceChild(newLinkContact, link)
+    })
+  }, [])
+
   return (
     <div className={Wrapper} ref={wrapperRef}>
       <div className={ContainerBox} ref={containerRef}>
         <header className={HeaderBox}>
           <div
             className={`${HeaderIconBox} ${
-              isOpen ? 'bg-yellow-500' : 'bg-blue-500'
+              !isOpen ? 'bg-yellow-500' : 'bg-blue-500'
             }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
-              className={`${HeaderIcon} ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+              className={`${HeaderIcon} ${!isOpen ? 'rotate-180' : 'rotate-0'}`}
               width="12"
               height="20"
               viewBox="0 0 12 20"
@@ -91,7 +122,7 @@ export const MenuSide = (props: MenuSideProps) => {
           </div>
           <div
             className={`${TitleBox} ${
-              isOpen ? 'text-yellow-600' : 'text-blue-500'
+              !isOpen ? 'text-yellow-600' : 'text-blue-500'
             }`}
           >
             {props.data.title}

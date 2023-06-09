@@ -1,5 +1,9 @@
 {
   "Index": {
-    "title": "Olá mundo"
+    "moreInfo": "More Info",
+    "name": "Nome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar"
   }
 }
