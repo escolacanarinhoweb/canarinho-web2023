@@ -14,7 +14,6 @@ export const components = {
   nossa_escola: dynamic(() => import('./NossaEscola')),
   social: dynamic(() => import('./Social')),
   tour_virtual: dynamic(() => import('./TourVirtual')),
-  trabalhe_conosco: dynamic(() => import('./TrabalheConosco')),
   veja_tambem: dynamic(() => import('./VejaTambem')),
   video_youtube: dynamic(() => import('./VideoYoutube'))
 }

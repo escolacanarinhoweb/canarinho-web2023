@@ -24,7 +24,6 @@ export const SliceDepoimentos = (props: DepoimentosProps) => {
             <SliderDepoimentos items={props.slice.items} />
           </div>
         </div>
-        B
       </div>
     </div>
   )
@@ -33,7 +32,9 @@ export const SliceDepoimentos = (props: DepoimentosProps) => {
 const Wrapper = `
   relative
 `
-const ContainerBox = ``
+const ContainerBox = `
+  relative
+`
 const BGSkyBox = `
   w-full
   absolute
