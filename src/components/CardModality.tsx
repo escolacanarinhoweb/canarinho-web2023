@@ -34,7 +34,11 @@ export const CardModality = (props: CardModalityProps) => {
               : 'after:bg-orange-500'
           }`}
         >
-          <PrismicNextImage className={Icon} field={props.icon} />
+          <PrismicNextImage
+            className={Icon}
+            field={props.icon}
+            fallbackAlt=""
+          />
         </div>
 
         <div

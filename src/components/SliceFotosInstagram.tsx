@@ -31,7 +31,11 @@ export const SliceFotosInstagram = (props: FotosInstagramProps) => {
             <div className={ItemBox} key={index}>
               <div className={FigureBox}>
                 <PrismicNextLink field={props.slice.primary.button_link}>
-                  <PrismicNextImage className={ImageBox} field={item.photo} />
+                  <PrismicNextImage
+                    className={ImageBox}
+                    field={item.photo}
+                    fallbackAlt=""
+                  />
                 </PrismicNextLink>
               </div>
             </div>

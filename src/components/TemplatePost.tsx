@@ -41,6 +41,7 @@ export const TemplatePost = (props: TemplatePostProps) => {
                       className={PageImage}
                       field={props.post.data.image}
                       priority
+                      fallbackAlt=""
                     />
                   </div>
                 )}

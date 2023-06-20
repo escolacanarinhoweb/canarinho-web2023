@@ -46,6 +46,7 @@ export const SliderGaleriaFotos = ({ items }: SliderGaleriaFotosProps) => {
                   className={ImageBox}
                   field={item.photo}
                   priority
+                  fallbackAlt=""
                 />
               </div>
             </div>

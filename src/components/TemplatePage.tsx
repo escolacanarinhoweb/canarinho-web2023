@@ -49,6 +49,7 @@ export const TemplatePage = (props: TemplatePageProps) => {
                       className={PageImage}
                       field={props.page.data.image}
                       priority
+                      fallbackAlt=""
                     />
                   </div>
                 )}

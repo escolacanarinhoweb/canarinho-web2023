@@ -125,6 +125,7 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
                         <PrismicNextImage
                           className={SocialIconBox}
                           field={item.icon}
+                          fallbackAlt=""
                         />
                       </PrismicLink>
                     )

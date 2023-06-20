@@ -23,7 +23,7 @@ export async function generateMetadata({
   })
 
   // @ts-ignore
-  const newDescription = 'teste'
+  const newDescription = home.data.meta_description[0].text
 
   return {
     title: home.data.meta_title,

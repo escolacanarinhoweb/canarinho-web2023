@@ -47,6 +47,7 @@ export const SliceNossaEscola = (props: NossaEscolaProps) => {
             <PrismicNextImage
               className={ImageBox}
               field={props.slice.primary.thumb}
+              fallbackAlt=""
             />
           </div>
         </div>
