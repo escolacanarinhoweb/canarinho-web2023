@@ -56,6 +56,7 @@ export const SliderGaleriaFotos = ({ items }: SliderGaleriaFotosProps) => {
         <div className={ButtonPrev} ref={prevRef}>
           <ButtonIcon icon="arrow-left" color="orange" />
         </div>
+
         <div className={ButtonNext} ref={nextRef}>
           <ButtonIcon color="orange" />
         </div>

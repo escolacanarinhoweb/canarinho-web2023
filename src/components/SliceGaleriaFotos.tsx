@@ -29,7 +29,8 @@ export const SliceGaleriaFotos = (props: GaleriaFotosProps) => {
 }
 
 const Wrapper = `
-  py-12
+  py-6
+  lg:py-12
 `
 const ContainerBox = ``
 const HeaderBox = `

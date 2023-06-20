@@ -44,3 +44,8 @@
 .textLong strong {
   font-weight: 700;
 }
+
+.swiper-button-disabled {
+  opacity: 0.3 !important;
+  cursor: auto !important;
+}

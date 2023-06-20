@@ -125,7 +125,8 @@ const PageBgTopBox = `
 `
 const PageBgTop = `
   w-full
-  h-[300px]
+  h-[200px]
+  lg:h-[300px]
 `
 const PageBgBottomBox = `
   h-[200px]
@@ -138,7 +139,8 @@ const PageBgBottomBox = `
 const PageBgBottom = ``
 const PageContainer = `
   ${ContainerTiny}
-  pt-32
+  pt-16
+  lg:pt-32
   relative
 `
 const PageHeader = ``
@@ -170,7 +172,8 @@ const PageImage = `
   bg-gray-50
 `
 const PageTitle = `
-  text-4xl
+  text-2xl
+  lg:text-4xl
   text-center
   font-serif
   max-w-[680px]
@@ -183,7 +186,7 @@ const PageBody = `
 const PageContent = `
   py-16
   grid
-  grid-cols-[1fr_auto]
+  lg:grid-cols-[1fr_auto]
   items-start
   justify-center
 `
@@ -191,6 +194,8 @@ const PageText = `
   textLong
   max-w-[680px]
   mx-auto
+  mb-12
+  lg:mb-0
 `
 const PageSideBar = `
   max-w-[300px]

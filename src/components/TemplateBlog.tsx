@@ -97,7 +97,8 @@ const Main = `
 const Posts = ``
 const Page = `
   bg-gray-25
-  pt-[300px]
+  pt-48
+  lg:pt-[300px]
 `
 const PageBgTopBox = `
 w-full
@@ -106,11 +107,13 @@ top-0
 left-0
 `
 const PageBgTop = `
-w-full
-h-[300px]
+  w-full
+  h-[200px]
+  lg:h-[300px]
 `
 const TitleBlog = `
-  text-6xl
+  text-4xl
+  lg:text-6xl
   font-serif
   text-center
   text-blue-500
@@ -127,7 +130,8 @@ text-gray-25
 const PageBgBottom = ``
 const PageContainer = `
   mb-12
-  p-12
+  p-6
+  lg:p-12
   relative
   border
   max-w-[680px]

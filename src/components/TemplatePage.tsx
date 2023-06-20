@@ -133,7 +133,8 @@ const PageBgTopBox = `
 `
 const PageBgTop = `
   w-full
-  h-[300px]
+  h-[200px]
+  lg:h-[300px]
 `
 const PageBgBottomBox = `
   h-[200px]
@@ -146,7 +147,8 @@ const PageBgBottomBox = `
 const PageBgBottom = ``
 const PageContainer = `
   ${ContainerTiny}
-  pt-32
+  pt-12
+  lg:pt-32
   relative
 `
 const PageHeader = ``
@@ -154,7 +156,7 @@ const PageFigure = `
   w-full
   max-w-[680px]
   mx-auto
-  h-[380px]
+  lg:h-[380px]
   mt-6
   mb-12
   relative
