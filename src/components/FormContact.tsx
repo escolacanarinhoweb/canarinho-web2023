@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
+import { useRef, useState } from 'react'
 import { ButtonText } from './ButtonText'
 import { IconFormEmail } from '@/svgs/IconFormEmail'
 import { IconFormName } from '@/svgs/IconFormName'
 import { useLocale } from 'next-intl'
+import emailjs from '@emailjs/browser'
+import ButtonTextLineLeft from '@/svgs/ButtonTextLineLeft'
+import ButtonTextLineRight from '@/svgs/ButtonTextLineRight'
+
+const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID || null
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID || null
+const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || null
 
 export const FormContact = () => {
   const locale = useLocale()
+  const formRef = useRef<HTMLFormElement>(null)
 
   const [nameFocus, setNameFocus] = useState(false)
   const [emailFocus, setEmailFocus] = useState(false)
@@ -23,6 +31,32 @@ export const FormContact = () => {
     subject: '',
     message: ''
   })
+
+  const handleSend = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const form = formRef.current
+
+    if (!form || !SERVICE_ID || !TEMPLATE_ID || !USER_ID) return
+
+    if (nameInput === '' || emailInput === '' || messageInput === '') {
+      setErrorMessage('Preencha todos os campos')
+      setTimeout(() => {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, USER_ID).then(
+      (result) => {
+        console.log(result.text)
+        handleSucess()
+      },
+      (error) => {
+        console.log(error.text)
+      }
+    )
+  }
 
   const handleFocus = (field: string) => {
     if (field === 'name') setNameFocus(true)
@@ -77,25 +111,6 @@ export const FormContact = () => {
     setMessageFocus(false)
   }
 
-  const handleSend = () => {
-    if (nameInput === '' || emailInput === '' || messageInput === '') {
-      setErrorMessage('Preencha todos os campos')
-      setTimeout(() => {
-        setErrorMessage('')
-      }, 3000)
-      return
-    }
-
-    setBody({
-      name: nameInput,
-      email: emailInput,
-      subject: subjectInput,
-      message: messageInput
-    })
-
-    handleSucess()
-  }
-
   return (
     <div className={Wrapper}>
       <div className="text-red-500 text-center mb-2">
@@ -106,7 +121,7 @@ export const FormContact = () => {
         {successMessage !== '' && <p>{successMessage}</p>}
       </div>
 
-      <form className={FormBox}>
+      <form className={FormBox} onSubmit={handleSend} ref={formRef}>
         <div className={Row1}>
           <div className={GroupField}>
             <div
@@ -134,6 +149,7 @@ export const FormContact = () => {
               type="text"
               onFocus={() => handleFocus('name')}
               onBlur={(e) => handleBlur(e, 'name')}
+              name="from_name"
               value={nameInput}
               onChange={(e) => {
                 setErrorMessage('')
@@ -169,6 +185,7 @@ export const FormContact = () => {
               value={emailInput}
               onFocus={() => handleFocus('email')}
               onBlur={(e) => handleBlur(e, 'email')}
+              name="from_email"
               onChange={(e) => {
                 setErrorMessage('')
                 setEmailInput(e.target.value)
@@ -205,6 +222,7 @@ export const FormContact = () => {
               value={subjectInput}
               onFocus={() => handleFocus('subject')}
               onBlur={(e) => handleBlur(e, 'subject')}
+              name="from_subject"
               onChange={(e) => {
                 setErrorMessage('')
                 setSubjectInput(e.target.value)
@@ -229,6 +247,7 @@ export const FormContact = () => {
               value={messageInput}
               onFocus={() => handleFocus('message')}
               onBlur={(e) => handleBlur(e, 'message')}
+              name="message"
               onChange={(e) => {
                 setErrorMessage('')
                 setMessageInput(e.target.value)
@@ -238,8 +257,10 @@ export const FormContact = () => {
         </div>
 
         <div className={Row3}>
-          <div className={ButtonBox} onClick={() => handleSend()}>
-            <ButtonText text="Enviar" />
+          <div className={ButtonBox}>
+            <ButtonTextLineLeft className={`${LineLeft}`} />
+            <input type="submit" value="Enviar" className={ButtonBoxText} />
+            <ButtonTextLineRight className={`${LineRight}`} />
           </div>
         </div>
       </form>
@@ -325,4 +346,38 @@ const TextArea = `
   rounded
 `
 const ButtonBox = `
+  h-12
+  inline-flex
+  text-white
+  font-serif
+  rounded-full
+  shadow-lg
+  transition
+  duration-300
+  hover:scale-110
+  transition-all
+  duration-200
+  cursor-pointer
+  bg-blue-500
+`
+
+const LineLeft = `
+  w-auto
+  h-[32px]
+  relative
+  top-[4px]
+  left-[4px]
+  opacity-90
+`
+const ButtonBoxText = `
+  px-8
+  cursor-pointer
+`
+const LineRight = `
+  w-auto
+  h-[32px]
+  relative
+  bottom-[-12px]
+  right-[4px]
+  opacity-90
 `

@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@emailjs/browser": "3.11.0",
     "@gsap/shockingly": "npm:@gsap/shockingly",
     "@prismicio/client": "^7.0.1",
     "@prismicio/next": "^1.2.1",
@@ -20,7 +21,6 @@
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
-    "emailjs": "4.0.2",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "gsap": "./gsap-bonus.tgz",

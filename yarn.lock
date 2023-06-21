@@ -244,6 +244,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@emailjs/browser@3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.11.0.tgz#0e78de2f85096d1a9ad5b5977b060bb5d1784cb4"
+  integrity sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==
+
 "@emotion/hash@^0.9.0":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.9.1.tgz#4ffb0055f7ef676ebc3a5a91fb621393294e2f43"
@@ -3229,11 +3234,6 @@ electron-to-chromium@^1.4.411:
   version "1.4.413"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.413.tgz#0067c3122946ae234cbefb9401ecefde851cdcf2"
   integrity sha512-Gd+/OAhRca06dkVxIQo/W7dr6Nmk9cx6lQdZ19GvFp51k5B/lUAokm6SJfNkdV8kFLsC3Z4sLTyEHWCnB1Efbw==
-
-emailjs@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/emailjs/-/emailjs-4.0.2.tgz#4ebb555a40a51e0493928e3a6b628da44044e2c7"
-  integrity sha512-w/tldI93qO7uw9XzdwCCRR36OY/TYJxB81vEOmQkmxVDZOdrAnoQoOAvaMoDmmBUSoD1msyAIwBdKFWzC7lgKQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
