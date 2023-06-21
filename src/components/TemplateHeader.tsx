@@ -322,6 +322,7 @@ const MenuBoxMobile = `
   transition-all
   duration-500
   ease-in-out
+  lg:hidden
 `
 const MenuBoxMobileContainer = `
   py-20
