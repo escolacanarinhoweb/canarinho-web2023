@@ -1,5 +1,6 @@
+'use client'
+
 import { useRef, useState } from 'react'
-import { ButtonText } from './ButtonText'
 import { IconFormEmail } from '@/svgs/IconFormEmail'
 import { IconFormName } from '@/svgs/IconFormName'
 import { useLocale } from 'next-intl'

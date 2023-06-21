@@ -55,8 +55,22 @@ export const SmootherProvider = ({
 
   useEffect(() => {
     const windowWidth = window.innerWidth
+    const html = document.querySelector('html') as HTMLHtmlElement
+    const body = document.querySelector('body') as HTMLBodyElement
 
-    if (windowWidth < 768) return
+    if (windowWidth < 768) {
+      console.log(`isOpen: ${isOpen}`)
+
+      if (isOpen || modalIsOpen) {
+        html.style.overflow = 'hidden'
+        body.style.overflow = 'hidden'
+      } else {
+        html.style.overflow = 'auto'
+        body.style.overflow = 'auto'
+      }
+
+      return
+    }
 
     if (isOpen || modalIsOpen) {
       smoother && smoother.paused(true)

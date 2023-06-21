@@ -16,6 +16,7 @@ import { ButtonTheme } from './ButtonTheme'
 import { Logo } from './Logo'
 import { useLocale } from 'next-intl'
 import { MenuSide, MenuSideProps } from './MenuSide'
+import { MenuSideMobile } from './MenuSideMobile'
 
 export interface TemplateHeaderProps {
   menu: {
@@ -85,15 +86,10 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
             <IconOpenMenu className={ButtonMenuIconBox} />
           </div>
         </div>
-
+        {/* menuDesk */}
         <div
           className={`
-          ${MenuBox}
-          ${
-            menuIsOpen
-              ? 'translate-x-0 lg:translate-x-0'
-              : 'translate-x-full lg:translate-x-0'
-          }
+          ${MenuBoxDesk}
           ${isScrolling ? 'py-4 lg:py-4' : '  py-4 lg:py-12'}
           ${isLoaded ? 'translate-y-0' : '-translate-y-full'}
           `}
@@ -149,6 +145,83 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
             >
               <ButtonText text={props.text_responsible_space} color="orange" />
             </PrismicNextLink>
+          </div>
+        </div>
+
+        {/* menuMobile */}
+        <div
+          className={`
+          ${MenuBoxMobile}
+          ${
+            menuIsOpen
+              ? 'translate-x-0 lg:translate-x-0'
+              : 'translate-x-full lg:translate-x-0'
+          }
+          ${isScrolling ? 'py-4 lg:py-4' : '  py-4 lg:py-12'}
+          ${isLoaded ? 'translate-y-0' : '-translate-y-full'}
+          `}
+        >
+          <div className={MenuBoxMobileContainer}>
+            <div
+              className={`${MenuListBox} ${
+                isScrolling ? 'text-blue-500' : 'lg:text-white'
+              }`}
+            >
+              <MenuList slices={props.menu.slices} />
+
+              <div className={DiaDia}>
+                <h2 className="pb-4 text-orange-500">Dia a Dia</h2>
+                <MenuSideMobile {...props.menuSide} />
+              </div>
+            </div>
+
+            <div className={SettingsBox}>
+              {/* <ButtonTheme /> */}
+              {props.button_language && <ButtonLanguage />}
+            </div>
+
+            <div className={SocialBox}>
+              {props.social.map((slice, index) => {
+                return (
+                  <div className={SocialListBox} key={index}>
+                    {slice.items.map((item, index) => {
+                      return (
+                        <PrismicLink
+                          className={SocialItemBox}
+                          key={index}
+                          field={item.link}
+                        >
+                          <PrismicNextImage
+                            className={SocialIconBox}
+                            field={item.icon}
+                            fallbackAlt=""
+                          />
+                        </PrismicLink>
+                      )
+                    })}
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className={ButtonsBox}>
+              <PrismicNextLink
+                className={ButtonBox}
+                field={props.link_pre_registration}
+              >
+                <ButtonText text={props.text_registration} />
+              </PrismicNextLink>
+
+              <PrismicNextLink
+                className={ButtonBox}
+                field={props.link_responsible_space}
+              >
+                <ButtonText
+                  text={props.text_responsible_space}
+                  color="orange"
+                />
+              </PrismicNextLink>
+            </div>
           </div>
         </div>
       </div>
@@ -210,7 +283,7 @@ const ButtonMenuIconBox = `
   text-blue-500
 `
 const ButtonLanguageBox = ``
-const MenuBox = `
+const MenuBoxDesk = `
   w-full
   min-h-[100vh]
   lg:min-h-[auto]
@@ -235,9 +308,41 @@ const MenuBox = `
   transition-all
   duration-500
   ease-in-out
+  hidden
+  lg:flex
+`
+const MenuBoxMobile = `
+  w-full
+  h-[100vh]
+  fixed
+  top-0
+  left-0
+  overflow-y-scroll
+  bg-white
+  transition-all
+  duration-500
+  ease-in-out
+`
+const MenuBoxMobileContainer = `
+  py-20
+  px-6
+  flex
+  flex-col
+  gap-8
+  items-center
 `
 const MenuListBox = `
   text-blue-500
+`
+const DiaDia = `
+  py-8
+  px-6
+  w-full
+  flex
+  flex-col
+  bg-gray-100
+  rounded-md
+  my-8
 `
 const SettingsBox = `
   hidden

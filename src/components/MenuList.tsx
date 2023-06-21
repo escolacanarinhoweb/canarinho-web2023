@@ -57,12 +57,11 @@ const Wrapper = `
   flex
   flex-col
   lg:flex-row
-  gap-4
   lg:gap-8
   font-serif
 `
 const Item = `
-  text-2xl
+  text-xl
   lg:text-xl
   group
   hover:text-blue-500
@@ -94,6 +93,6 @@ const SubMenuList = `
   lg:shadow-lg
 `
 const SubItem = `
-  text-base
+  lg:text-base
   hover:text-blue-900
 `
