@@ -132,19 +132,26 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
           </div>
 
           <div className={ButtonsBox}>
-            <PrismicNextLink
-              className={ButtonBox}
-              field={props.link_pre_registration}
-            >
-              <ButtonText text={props.text_registration} />
-            </PrismicNextLink>
+            {props.text_registration !== null && (
+              <PrismicNextLink
+                className={ButtonBox}
+                field={props.link_pre_registration}
+              >
+                <ButtonText text={props.text_registration} />
+              </PrismicNextLink>
+            )}
 
-            <PrismicNextLink
-              className={ButtonBox}
-              field={props.link_responsible_space}
-            >
-              <ButtonText text={props.text_responsible_space} color="orange" />
-            </PrismicNextLink>
+            {props.link_responsible_space !== null && (
+              <PrismicNextLink
+                className={ButtonBox}
+                field={props.link_responsible_space}
+              >
+                <ButtonText
+                  text={props.text_responsible_space}
+                  color="orange"
+                />
+              </PrismicNextLink>
+            )}
           </div>
         </div>
 
@@ -205,22 +212,26 @@ export const TemplateHeader = (props: TemplateHeaderProps) => {
             </div>
 
             <div className={ButtonsBox}>
-              <PrismicNextLink
-                className={ButtonBox}
-                field={props.link_pre_registration}
-              >
-                <ButtonText text={props.text_registration} />
-              </PrismicNextLink>
+              {props.text_registration !== null && (
+                <PrismicNextLink
+                  className={ButtonBox}
+                  field={props.link_pre_registration}
+                >
+                  <ButtonText text={props.text_registration} />
+                </PrismicNextLink>
+              )}
 
-              <PrismicNextLink
-                className={ButtonBox}
-                field={props.link_responsible_space}
-              >
-                <ButtonText
-                  text={props.text_responsible_space}
-                  color="orange"
-                />
-              </PrismicNextLink>
+              {props.text_responsible_space !== null && (
+                <PrismicNextLink
+                  className={ButtonBox}
+                  field={props.link_responsible_space}
+                >
+                  <ButtonText
+                    text={props.text_responsible_space}
+                    color="orange"
+                  />
+                </PrismicNextLink>
+              )}
             </div>
           </div>
         </div>

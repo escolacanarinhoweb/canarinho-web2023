@@ -165,14 +165,17 @@ const UnityTitleBox = `
   mb-2
   font-serif
   text-blue-500
-  text-lg
+  text-xl
+  font-bold
 `
-const UnityInfoBox = ``
+const UnityInfoBox = `
+  text-yellowDark-900
+`
 const LogoBox = `
   w-48
 `
 const CopyBox = `
-
+  text-yellowDark-900
   py-12
   text-center
 `

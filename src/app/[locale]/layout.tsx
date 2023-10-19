@@ -1,13 +1,13 @@
 import { useLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
-import { Sofia, Comic_Neue, Mulish } from 'next/font/google'
+import { Sofia, Comic_Neue, Inter } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { Providers } from './providers'
 import type { Metadata } from 'next'
 
 import './globals.css'
 
-// const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const sofia = Sofia({
   weight: ['400'],
   subsets: ['latin'],
@@ -18,7 +18,7 @@ const comic_neue = Comic_Neue({
   subsets: ['latin'],
   variable: '--font-comic-neue'
 })
-const mulish = Mulish({ subsets: ['latin'], variable: '--font-mulish' })
+// const mulish = Mulish({ subsets: ['latin'], variable: '--font-mulish' })
 
 export const metadata = {
   icons: {
@@ -88,7 +88,7 @@ export default function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${sofia.variable} ${comic_neue.variable} ${mulish.variable} ${Body}`}
+        className={`${sofia.variable} ${comic_neue.variable} ${inter.variable} ${Body}`}
       >
         <NextIntlClientProvider locale={locale}>
           <Providers>{children}</Providers>

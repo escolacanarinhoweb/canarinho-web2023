@@ -16,7 +16,7 @@ module.exports = {
         lg: '1170px'
       },
       fontFamily: {
-        sans: ['var(--font-mulish)'],
+        sans: ['var(--font-inter)'],
         serif: ['var(--font-comic-neue)'],
         script: ['var(--font-sofia)']
       },
